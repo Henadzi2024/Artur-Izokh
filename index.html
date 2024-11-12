@@ -23,42 +23,41 @@
         }
 
         .slider {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: url('images/аrtur.jpg');
-    background-size: cover;
-    background-position: center 15%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    animation: slideshow 25s infinite;
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('images/аrtur.jpg');
+            background-size: cover;
+            background-position: center 15%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            animation: slideshow 15s infinite;
+        }
 
-@keyframes slideshow {
-    0%, 30% {
-        background-image: url('images/аrtur.jpg');
-        background-position: center 15%;
-    }
-    30%, 47.5% {
-        background-image: url('images/аrtur-hotel.jpg');
-        background-position: center 25%;  /* Это примерное значение */
-    }
-    47.5%, 65% {
-        background-image: url('images/аrtur-ryadom.jpg');
-        background-position: center 25%;  /* Это примерное значение */
-    }
-    65%, 82.5% {
-        background-image: url('images/аrtur-vozle.jpg');
-        background-position: center 25%;  /* Это примерное значение */
-    }
-    82.5%, 100% {
-        background-image: url('images/аrtur-zarulem.jpg');
-        background-position: center 25%;  /* Это примерное значение */
-    }
-}
+        @keyframes slideshow {
+            0%, 40% {
+                background-image: url('images/аrtur.jpg');
+                background-position: center 15%;
+            }
+            40%, 55% {
+                background-image: url('images/аrtur-hotel.jpg');
+                background-position: center 35%;
+            }
+            55%, 70% {
+                background-image: url('images/аrtur-ryadom.jpg');
+                background-position: center 35%;
+            }
+            70%, 85% {
+                background-image: url('images/аrtur-vozle.jpg');
+                background-position: center 35%;
+            }
+            85%, 100% {
+                background-image: url('images/аrtur-zarulem.jpg');
+                background-position: center 50%;
+            }
         }
 
         .header {
