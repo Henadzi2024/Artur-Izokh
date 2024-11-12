@@ -7,9 +7,8 @@
     <style>
         :root {
             --text-light: #ffffff;
-            --gold-accent: #FF6B00;
-            --overlay-dark: rgba(0, 0, 0, 0.4);
             --header-dark: #1B263B;
+            --gold-accent: #FF6B00;
         }
 
         * {
@@ -21,46 +20,27 @@
         body {
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            position: relative;
             background-image: url('images/аrtur.jpg');
-            background-size: 70%;
-            background-position: center 80%;
+            background-size: cover;
+            background-position: center 65%;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            color: var(--text-light);
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: var(--overlay-dark);
-            z-index: 1;
         }
 
         .header {
             background-color: var(--header-dark);
             padding: 1rem;
             text-align: center;
-            position: relative;
-            z-index: 2;
         }
 
         .header h1 {
             color: var(--text-light);
             font-size: 2rem;
-            font-weight: normal;
         }
 
-        .container {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
+        .main-content {
+            text-align: center;
+            padding: 2rem 1rem;
         }
 
         .reservation-btn {
@@ -73,59 +53,24 @@
             text-decoration: none;
             font-size: 1.2rem;
             text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-bottom: 1rem;
-        }
-
-        .reservation-btn:hover {
-            background-color: #ff8533;
         }
 
         .contacts {
             text-align: center;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .contacts a {
+            padding: 1rem;
             color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s;
         }
 
-        .contacts a:hover {
-            color: var(--gold-accent);
-        }
-
-        .main-content {
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 2rem;
-        }
-
-        .main-title {
-            font-size: 3rem;
+        .title {
+            color: var(--text-light);
+            font-size: 3.5rem;
             text-transform: uppercase;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 2rem 0;
         }
 
         .subtitle {
+            color: var(--text-light);
             font-size: 1.5rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 2rem;
-            }
-            .subtitle {
-                font-size: 1.2rem;
-            }
         }
     </style>
 </head>
@@ -133,16 +78,17 @@
     <header class="header">
         <h1>VTC Paris Premium</h1>
     </header>
-    <div class="container">
+
+    <div class="main-content">
         <a href="tel:+33628619912" class="reservation-btn">RÉSERVER MAINTENANT</a>
+        
         <div class="contacts">
-            <a href="https://wa.me/33628619912">WhatsApp: +33 6 28 61 99 12</a><br>
-            <a href="mailto:luxetransfertvtcparis@gmail.com">Email: luxetransfertvtcparis@gmail.com</a>
+            <div>WhatsApp: +33 6 28 61 99 12</div>
+            <div>Email: luxetransfertvtcparis@gmail.com</div>
         </div>
-        <div class="main-content">
-            <h2 class="main-title">Votre Chauffeur VTC à Paris</h2>
-            <p class="subtitle">Transport de luxe personnalisé avec chauffeur professionnel</p>
-        </div>
+
+        <h2 class="title">Votre Chauffeur VTC à Paris</h2>
+        <p class="subtitle">Transport de luxe personnalisé avec chauffeur professionnel</p>
     </div>
 </body>
 </html>
