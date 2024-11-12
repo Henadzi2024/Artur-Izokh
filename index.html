@@ -26,15 +26,15 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 90%;
             z-index: -1;
         }
 
         .background-slideshow div {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 90%;
             background-size: cover;
             background-position: center 15%;
             background-repeat: no-repeat;
@@ -63,23 +63,23 @@
         .background-slideshow div:nth-child(4) {
             background-image: url('images/аrtur-vozle.jpg');
             animation: slideshow 25s linear infinite;
-            animation-delay: 10s;
+            animation-delay: 5s;
         }
 
         .background-slideshow div:nth-child(5) {
             background-image: url('images/аrtur-zarulem.jpg');
             animation: slideshow 25s linear infinite;
-            animation-delay: 15s;
+            animation-delay: 5s;
         }
 
         @keyframes slideshow {
-            0%, 16% {
+            0%, 0% {
                 opacity: 0;
             }
-            20%, 36% {
+            0%, 0% {
                 opacity: 1;
             }
-            40%, 100% {
+            0%, 0% {
                 opacity: 0;
             }
         }
