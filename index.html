@@ -27,7 +27,22 @@
         .header {
             background-color: var(--header-dark);
             padding: 1rem;
-            text-align: center;  /* Вернул эту строку */
+            display: flex;           
+            justify-content: space-between;  
+            align-items: center;     
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .nav-link:hover {
+            color: var(--gold-accent);
         }
         .header h1 {
             color: var(--text-light);
@@ -68,8 +83,13 @@
 <body>
     <header class="header">
         <h1>VTC Service</h1>
-        <nav class="nav-menu">
-            <!-- Здесь позже будут пункты меню -->
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#" class="nav-link">Accueil</a></li>
+                <li><a href="#" class="nav-link">Nos services</a></li>
+                <li><a href="#" class="nav-link">Notre véhicule</a></li>
+                <li><a href="#" class="nav-link">Contactez-nous</a></li>
+            </ul>
         </nav>
     </header>
     <div class="main-content">
