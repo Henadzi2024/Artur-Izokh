@@ -27,20 +27,11 @@
         .header {
             background-color: var(--header-dark);
             padding: 1rem;
-        }
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+            text-align: center;  /* Вернул эту строку */
         }
         .header h1 {
             color: var(--text-light);
             font-size: 2rem;
-        }
-        .nav-menu {
-            /* Пока пустой контейнер для меню */
         }
         .main-content {
             text-align: center;
@@ -76,12 +67,10 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-container">
-            <h1>VTC Service</h1>
-            <nav class="nav-menu">
-                <!-- Здесь позже будут пункты меню -->
-            </nav>
-        </div>
+        <h1>VTC Service</h1>
+        <nav class="nav-menu">
+            <!-- Здесь позже будут пункты меню -->
+        </nav>
     </header>
     <div class="main-content">
         <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
