@@ -20,68 +20,22 @@
         body {
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            position: relative;
-        }
-
-        /* Slider styles */
-        .slider {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            animation: backgroundChange 10s infinite;
             background-size: cover;
-            background-position: center;
+            background-position: center 15%;
             background-repeat: no-repeat;
-            opacity: 0;
-            animation: slideShow 25s linear infinite;
+            background-attachment: fixed;
         }
 
-        .slide:nth-child(1) {
-            background-image: url('images/аrtur.jpg');
-            animation-delay: 0s;
-        }
-
-        .slide:nth-child(2) {
-            background-image: url('images/аrtur-hotel.jpg');
-            animation-delay: 5s;
-        }
-
-        .slide:nth-child(3) {
-            background-image: url('images/аrtur-ryadom.jpg');
-            animation-delay: 10s;
-        }
-
-        .slide:nth-child(4) {
-            background-image: url('images/аrtur-vozle.jpg');
-            animation-delay: 15s;
-        }
-
-        .slide:nth-child(5) {
-            background-image: url('images/аrtur-zarulem.jpg');
-            animation-delay: 20s;
-        }
-
-        @keyframes slideShow {
-            0%, 19% {
-                opacity: 1;
+        @keyframes backgroundChange {
+            0%, 45% {
+                background-image: url('images/аrtur.jpg');
             }
-            20%, 99% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
+            55%, 100% {
+                background-image: url('images/аrtur-hotel.jpg');
             }
         }
 
-        /* Остальные стили без изменений */
         .header {
             background-color: var(--header-dark);
             padding: 1rem;
@@ -148,16 +102,6 @@
     </style>
 </head>
 <body>
-    <!-- Добавляем слайдер -->
-    <div class="slider">
-        <div class="slide"></div>
-        <div class="slide"></div>
-        <div class="slide"></div>
-        <div class="slide"></div>
-        <div class="slide"></div>
-    </div>
-
-    <!-- Остальной код без изменений -->
     <header class="header">
         <h1>VTC Service</h1>
         <nav>
