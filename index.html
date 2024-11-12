@@ -3,210 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VTC Paris Premium - Transport privé</title>
+    <title>Page de réservation</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
         }
 
-        :root {
-            --primary-color: #14213d;
-            --gold-accent: #fca311;
-            --text-light: #ffffff;
-            --overlay-color: rgba(20, 33, 61, 0.85);
-            --content-overlay: rgba(20, 33, 61, 0.9);
-        }
-
-        body {
-            min-height: 100vh;
-            background-image: url('images/аrtur.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--text-light);
-        }
-
-        .header {
-            background-color: rgba(20, 33, 61, 0.95);
-            padding: 20px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .main-content {
-            padding-top: 80px;
-        }
-
-        .hero {
-            min-height: calc(100vh - 80px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .services {
-            padding: 60px 20px;
-            background-color: var(--content-overlay);
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+        .container {
             max-width: 1200px;
-            margin: 40px auto;
-        }
-
-        .service-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .service-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: var(--gold-accent);
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 10px;
-            transition: transform 0.3s ease;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-            background-color: #fdb137;
-        }
-
-        .contact {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: var(--content-overlay);
-        }
-
-        .footer {
-            background-color: #0b1526;
-            color: white;
-            text-align: center;
+            margin: 0 auto;
             padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 40px;
         }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--gold-accent);
-            font-size: 2.5em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .image-container {
+            flex: 1;
+            min-width: 300px;
         }
 
-        .price {
-            color: var(--gold-accent);
+        .image-container img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-reserve {
+            display: inline-block;
+            background-color: #FF6B00;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
             font-weight: bold;
-            margin-top: 15px;
-            font-size: 1.2em;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-reserve:hover {
+            background-color: #FF8533;
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
+            .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
             }
-            
-            .hero p {
-                font-size: 1.2em;
-            }
-            
-            .section-title {
-                font-size: 2em;
+
+            .image-container, .content {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <h2>VTC Paris Premium</h2>
-    </header>
-
-    <main class="main-content">
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Votre Chauffeur VTC à Paris</h1>
-                <p>Transport de luxe personnalisé avec chauffeur professionnel</p>
-                <a href="tel:+33628619912" class="button">Réserver maintenant</a>
+    <div class="container">
+        <div class="image-container">
+            <img src="images/artur.jpg" alt="Photo professionnelle">
+        </div>
+        <div class="content">
+            <div class="contact-info">
+                <p>WhatsApp: <a href="https://wa.me/33771234567">+33 7 71 23 45 67</a></p>
+                <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
             </div>
-        </section>
-
-        <section class="services">
-            <h2 class="section-title">Nos Services</h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <h3>Transport Aéroport</h3>
-                    <p>Transferts vers CDG, Orly et Beauvais</p>
-                    <p class="price">À partir de 50€</p>
-                </div>
-                <div class="service-item">
-                    <h3>Business & Events</h3>
-                    <p>Service dédié aux professionnels</p>
-                    <p class="price">Tarifs sur mesure</p>
-                </div>
-                <div class="service-item">
-                    <h3>Tourisme</h3>
-                    <p>Découvrez Paris avec un chauffeur privé</p>
-                    <p class="price">À partir de 75€/heure</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact">
-            <h2 class="section-title">Réservez Votre Course</h2>
-            <p style="margin-bottom: 30px;">Disponible 7j/7, 24h/24</p>
-            <div>
-                <a href="https://wa.me/33628619912" class="button">WhatsApp</a>
-                <a href="mailto:luxetransfertvtcparis@gmail.com" class="button">Email</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>VTC Paris Premium - SIRET: [Votre SIRET]</p>
-        <p>Licence VTC: [Votre numéro de licence]</p>
-    </footer>
+            <a href="#" class="btn-reserve">Réserver maintenant</a>
+        </div>
+    </div>
 </body>
 </html>
