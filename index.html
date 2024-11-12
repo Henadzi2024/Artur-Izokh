@@ -10,66 +10,71 @@
             --header-dark: #1e2761;
             --gold-accent: #d4af37;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        @keyframes backgroundChange {
+            0%, 18% {
+                background-image: url('images/аrtur.jpg');
+                background-position: center 15%;
+            }
+            20%, 38% {
+                background-image: url('images/аrtur-hotel.jpg');
+                background-position: center 10%;
+            }
+            40%, 58% {
+                background-image: url('images/аrtur-ryadom.jpg');
+                background-position: center 10%;
+            }
+            60%, 78% {
+                background-image: url('images/аrtur-vozle.jpg');
+                background-position: center 10%;
+            }
+            80%, 98% {
+                background-image: url('images/аrtur-zarulem.jpg');
+                background-position: center 10%;
+            }
+        }
         body {
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            animation: backgroundChange 10s infinite;
+            background-image: url('images/аrtur.jpg');
             background-size: cover;
             background-position: center 15%;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            animation: backgroundChange 25s infinite;
         }
-
-        @keyframes backgroundChange {
-            0%, 45% {
-                background-image: url('images/аrtur.jpg');
-            }
-            55%, 100% {
-                background-image: url('images/аrtur-hotel.jpg');
-            }
-        }
-
         .header {
             background-color: var(--header-dark);
             padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex;           
+            justify-content: space-between;  
+            align-items: center;     
         }
-
         .nav-list {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
-
         .nav-link {
             color: var(--text-light);
             text-decoration: none;
             font-size: 1.1rem;
         }
-
         .nav-link:hover {
             color: var(--gold-accent);
         }
-
         .header h1 {
             color: var(--text-light);
             font-size: 2rem;
         }
-
         .main-content {
             text-align: center;
             padding: 2rem 1rem;
         }
-
         .reservation-btn {
             display: block;
             width: 100%;
@@ -81,20 +86,17 @@
             font-size: 1.2rem;
             text-transform: uppercase;
         }
-
         .contacts {
             text-align: center;
             padding: 1rem;
             color: var(--text-light);
         }
-
         .title {
             color: var(--text-light);
             font-size: 3.5rem;
             text-transform: uppercase;
             margin: 2rem 0;
         }
-
         .subtitle {
             color: var(--text-light);
             font-size: 1.5rem;
@@ -113,9 +115,9 @@
             </ul>
         </nav>
     </header>
-
     <div class="main-content">
         <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
+        
         <div class="contacts">
             <div>WhatsApp: +33628619912</div>
             <div>Email: luxetransfertvtcparis@gmail.com</div>
