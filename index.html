@@ -3,104 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page de réservation</title>
+    <title>VTC Paris Premium - Transport privé</title>
     <style>
+        :root {
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --button-color: #FF6B00;
+        }
+
         body {
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            background-image: url('images/аrtur.jpg');
+            background-size: 80%;
+            background-position: center 40%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            gap: 40px;
-        }
-
-        .image-container {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .image-container img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .content {
-            flex: 1;
-            min-width: 300px;
+            color: var(--text-light);
         }
 
         .contact-info {
-            margin-bottom: 30px;
-        }
-
-        .contact-info p {
-            margin: 10px 0;
+            margin-top: 20px;
+            text-align: center;
             font-size: 18px;
-            color: #333;
         }
 
         .contact-info a {
-            color: #333;
+            color: var(--text-light);
             text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
+            margin: 10px 0;
+            display: block;
         }
 
         .btn-reserve {
             display: inline-block;
-            background-color: #FF6B00;
+            background-color: var(--button-color);
             color: white;
             padding: 15px 30px;
-            border-radius: 5px;
             text-decoration: none;
-            font-size: 18px;
+            border-radius: 5px;
             font-weight: bold;
+            font-size: 18px;
+            margin: 20px 0;
             text-transform: uppercase;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-reserve:hover {
-            background-color: #FF8533;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .image-container, .content {
-                width: 100%;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="image-container">
-            <img src="images/artur.jpg" alt="Photo professionnelle">
-        </div>
-        <div class="content">
-            <div class="contact-info">
-                <p>WhatsApp: <a href="https://wa.me/33771234567">+33 7 71 23 45 67</a></p>
-                <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
-            </div>
-            <a href="#" class="btn-reserve">Réserver maintenant</a>
-        </div>
+    <div class="contact-info">
+        <a href="tel:+33628619912" class="btn-reserve">RÉSERVER MAINTENANT</a>
+        <a href="https://wa.me/33628619912">WhatsApp : +33 6 28 61 99 12</a>
+        <a href="mailto:luxetransfertvtcparis@gmail.com">Email : luxetransfertvtcparis@gmail.com</a>
     </div>
 </body>
 </html>
