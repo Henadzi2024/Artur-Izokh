@@ -131,6 +131,18 @@
             font-size: 2rem;
         }
 
+        /* Стили для hero section */
+        .hero-section {
+            padding-top: 2rem;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
         /* Стили для кнопки бронирования */
         .reservation-btn {
             display: inline-block;
@@ -171,11 +183,11 @@
             font-size: 3.5rem;
             text-transform: uppercase;
             margin: 2rem 0;
-}
+        }
 
-      .subtitle {
-           color: #fff700;
-         font-size: 1.5rem;
+        .subtitle {
+            color: #fff700;
+            font-size: 1.5rem;
         }
 
         /* Новые секции */
@@ -204,15 +216,12 @@
             .header-right {
                 gap: 1rem;
             }
-
             .nav-list {
                 gap: 1rem;
             }
-
             .title {
                 font-size: 2.5rem;
             }
-
             .subtitle {
                 font-size: 1.2rem;
             }
@@ -242,11 +251,15 @@
         </div>
     </header>
 
+    <!-- Новая hero section -->
+    <section class="hero-section">
+        <h2 class="title">Votre chauffeur privé</h2>
+        <p class="subtitle">Transport premium avec chauffeur professionnel</p>
+    </section>
+
     <!-- Основной контент -->
     <main>
         <div class="main-content">
-            <h2 class="title">Votre chauffeur privé</h2>
-            <p class="subtitle">Transport premium avec chauffeur professionnel</p>
         </div>
 
         <section id="services" class="section">
