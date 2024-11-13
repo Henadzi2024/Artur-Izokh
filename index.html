@@ -22,50 +22,92 @@
             font-family: Arial, sans-serif;
         }
 
-        .slider {
+        @keyframes sliding {
+            0%, 23% {
+                opacity: 1;
+            }
+            24%, 94% {
+                opacity: 0;
+            }
+            95%, 100% {
+                opacity: 1;
+            }
+        }
+
+        /* Оригинальный код слайдера */
+        .slide1 {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            background-image: url('images/artur.jpg');
+            background-image: url('images/аrtur.jpg');
             background-size: cover;
-            background-position: center 15%;
+            background-position: center 25%;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            animation: slideshow 25s steps(1) infinite;
+            animation: sliding 25s infinite;
         }
 
-        @keyframes slideshow {
-            0%, 40% {
-                background-image: url('images/artur.jpg');
-                background-position: center 15%;
-            }
-            40%, 55% {
-                background-image: url('images/artur-hotel.jpg');
-                background-position: center 35%;
-            }
-            55%, 70% {
-                background-image: url('images/artur-ryadom.jpg');
-                background-position: center 35%;
-            }
-            70%, 85% {
-                background-image: url('images/artur-vozle.jpg');
-                background-position: center 35%;
-            }
-            85%, 100% {
-                background-image: url('images/artur-zarulem.jpg');
-                background-position: center 50%;
-            }
+        .slide2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background-image: url('images/аrtur-hotel.jpg');
+            background-size: cover;
+            background-position: center 45%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            animation: sliding 25s infinite 6s;
         }
 
+        .slide4 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -4;
+            background-image: url('images/аrtur-vozle.jpg');
+            background-size: cover;
+            background-position: center 25%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            animation: sliding 25s infinite 12s;
+        }
+
+        .slide5 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -5;
+            background-image: url('images/аrtur-zarulem.jpg');
+            background-size: cover;
+            background-position: center 37%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            animation: sliding 25s infinite 18s;
+        }
+
+        /* Header стили */
         .header {
             background-color: var(--header-dark);
             padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .nav-list {
@@ -89,39 +131,33 @@
             font-size: 2rem;
         }
 
-        .hero-content {
-            text-align: center;
-            padding: 4rem 1rem;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .title {
-            color: #ffcc00;
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .subtitle {
-            color: #fff700;
-            font-size: 1.5rem;
-        }
-
-        .main-content {
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-
+        /* Стили для кнопки бронирования */
         .reservation-btn {
-            display: block;
-            width: 100%;
+            display: inline-block;
             background-color: var(--gold-accent);
             color: var(--text-light);
             text-align: center;
-            padding: 1rem;
+            padding: 0.5rem 1rem;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .reservation-btn:hover {
+            background-color: #b69530;
+            transform: translateY(-2px);
+        }
+
+        /* Основной контент */
+        .main-content {
+            text-align: center;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .contacts {
@@ -129,33 +165,113 @@
             padding: 1rem;
             color: var(--text-light);
         }
+
+        .title {
+            color: #ffcc00;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            margin: 2rem 0;
+}
+
+      .subtitle {
+           color: #fff700;
+         font-size: 1.5rem;
+        }
+
+        /* Новые секции */
+        .section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--text-light);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+        }
+
+        /* Медиа-запросы */
+        @media (max-width: 768px) {
+            .header-right {
+                gap: 1rem;
+            }
+
+            .nav-list {
+                gap: 1rem;
+            }
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="slider"></div>
+    <!-- Слайдер -->
+    <div class="slide1"></div>
+    <div class="slide2"></div>
+    <div class="slide4"></div>
+    <div class="slide5"></div>
+
+    <!-- Шапка -->
     <header class="header">
         <h1>VTC Service</h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="#" class="nav-link">Accueil</a></li>
-                <li><a href="#" class="nav-link">Nos services</a></li>
-                <li><a href="#" class="nav-link">Notre véhicule</a></li>
-                <li><a href="#" class="nav-link">Contactez-nous</a></li>
-            </ul>
-        </nav>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">Accueil</a></li>
+                    <li><a href="#services" class="nav-link">Nos services</a></li>
+                    <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
+                    <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
+        </div>
     </header>
 
-    <div class="hero-content">
-        <h2 class="title">Votre chauffeur privé</h2>
-        <p class="subtitle">Transport premium avec chauffeur professionnel</p>
-    </div>
-
-    <div class="main-content">
-        <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
-        <div class="contacts">
-            <div>WhatsApp: +33628619912</div>
-            <div>Email: luxetransfertvtcparis@gmail.com</div>
+    <!-- Основной контент -->
+    <main>
+        <div class="main-content">
+            <h2 class="title">Votre chauffeur privé</h2>
+            <p class="subtitle">Transport premium avec chauffeur professionnel</p>
         </div>
-    </div>
+
+        <section id="services" class="section">
+            <div class="section-content">
+                <h2>Nos Services</h2>
+                <!-- Контент для секции услуг -->
+            </div>
+        </section>
+
+        <section id="vehicle" class="section">
+            <div class="section-content">
+                <h2>Notre Véhicule</h2>
+                <!-- Контент для секции автомобиля -->
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="section-content">
+                <h2>Contactez-nous</h2>
+                <div class="contacts">
+                    <div>WhatsApp: +33628619912</div>
+                    <div>Email: luxetransfertvtcparis@gmail.com</div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
