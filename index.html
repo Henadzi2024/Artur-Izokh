@@ -1,290 +1,276 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VTC Service - Transport Premium</title>
-    <style>
-        :root {
-            --text-light: #ffffff;
-            --header-dark: #1e2761;
-            --gold-accent: #d4af37;
-        }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>VTC Service - Transport Premium</title>
+   <style>
+       :root {
+           --text-light: #ffffff;
+           --header-dark: #1e2761;
+           --gold-accent: #d4af37;
+       }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
 
-        body {
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-        }
+       body {
+           min-height: 100vh;
+           font-family: Arial, sans-serif;
+       }
 
-        @keyframes sliding {
-            0%, 23% {
-                opacity: 1;
-            }
-            24%, 94% {
-                opacity: 0;
-            }
-            95%, 100% {
-                opacity: 1;
-            }
-        }
+       @keyframes sliding {
+           0%, 23% {
+               opacity: 1;
+           }
+           24%, 94% {
+               opacity: 0;
+           }
+           95%, 100% {
+               opacity: 1;
+           }
+       }
 
-        /* Оригинальный код слайдера */
-        .slide1 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: url('images/аrtur.jpg');
-            background-size: cover;
-            background-position: center 25%;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            animation: sliding 25s infinite;
-        }
+       /* Оригинальный код слайдера */
+       .slide1 {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           z-index: -1;
+           background-image: url('images/аrtur.jpg');
+           background-size: cover;
+           background-position: center 25%;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           animation: sliding 25s infinite;
+       }
 
-        .slide2 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background-image: url('images/аrtur-hotel.jpg');
-            background-size: cover;
-            background-position: center 45%;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            animation: sliding 25s infinite 6s;
-        }
+       .slide2 {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           z-index: -2;
+           background-image: url('images/аrtur-hotel.jpg');
+           background-size: cover;
+           background-position: center 45%;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           animation: sliding 25s infinite 6s;
+       }
 
-        .slide4 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -4;
-            background-image: url('images/аrtur-vozle.jpg');
-            background-size: cover;
-            background-position: center 25%;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            animation: sliding 25s infinite 12s;
-        }
+       .slide4 {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           z-index: -4;
+           background-image: url('images/аrtur-vozle.jpg');
+           background-size: cover;
+           background-position: center 25%;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           animation: sliding 25s infinite 12s;
+       }
 
-        .slide5 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -5;
-            background-image: url('images/аrtur-zarulem.jpg');
-            background-size: cover;
-            background-position: center 37%;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            animation: sliding 25s infinite 18s;
-        }
+       .slide5 {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           z-index: -5;
+           background-image: url('images/аrtur-zarulem.jpg');
+           background-size: cover;
+           background-position: center 37%;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           animation: sliding 25s infinite 18s;
+       }
 
-        /* Header стили */
-        .header {
-            background-color: var(--header-dark);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+       /* Header стили */
+       .header {
+           background-color: var(--header-dark);
+           padding: 1rem;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+       }
 
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
+       .header-right {
+           display: flex;
+           align-items: center;
+           gap: 2rem;
+       }
 
-        .nav-list {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+       .nav-list {
+           display: flex;
+           list-style: none;
+           gap: 2rem;
+       }
 
-        .nav-link {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
+       .nav-link {
+           color: var(--text-light);
+           text-decoration: none;
+           font-size: 1.1rem;
+       }
 
-        .nav-link:hover {
-            color: var(--gold-accent);
-        }
+       .nav-link:hover {
+           color: var(--gold-accent);
+       }
 
-        .header h1 {
-            color: var(--text-light);
-            font-size: 2rem;
-        }
+       .header h1 {
+           color: var(--text-light);
+           font-size: 2rem;
+       }
 
-        /* Стили для hero section */
-        .hero-section {
-            padding-top: 2rem;
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
+       /* Стили для кнопки бронирования */
+       .reservation-btn {
+           display: inline-block;
+           background-color: var(--gold-accent);
+           color: var(--text-light);
+           text-align: center;
+           padding: 0.5rem 1rem;
+           text-decoration: none;
+           font-size: 1.1rem;
+           text-transform: uppercase;
+           border-radius: 4px;
+           transition: all 0.3s ease;
+       }
 
-        /* Стили для кнопки бронирования */
-        .reservation-btn {
-            display: inline-block;
-            background-color: var(--gold-accent);
-            color: var(--text-light);
-            text-align: center;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
+       .reservation-btn:hover {
+           background-color: #b69530;
+           transform: translateY(-2px);
+       }
 
-        .reservation-btn:hover {
-            background-color: #b69530;
-            transform: translateY(-2px);
-        }
+       /* Основной контент */
+       .main-content {
+           text-align: center;
+           padding: 2rem 1rem;
+           min-height: 100vh;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+       }
 
-        /* Основной контент */
-        .main-content {
-            text-align: center;
-            padding: 2rem 1rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+       .contacts {
+           text-align: center;
+           padding: 1rem;
+           color: var(--text-light);
+       }
 
-        .contacts {
-            text-align: center;
-            padding: 1rem;
-            color: var(--text-light);
-        }
+       .title {
+           color: #ffcc00;
+           font-size: 3.5rem;
+           text-transform: uppercase;
+           margin: 2rem 0;
+       }
 
-        .title {
-            color: #ffcc00;
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            margin: 2rem 0;
-        }
+       .subtitle {
+           color: #fff700;
+           font-size: 1.5rem;
+       }
 
-        .subtitle {
-            color: #fff700;
-            font-size: 1.5rem;
-        }
+       /* Новые секции */
+       .section {
+           min-height: 100vh;
+           padding: 4rem 2rem;
+           background: rgba(0, 0, 0, 0.7);
+           position: relative;
+       }
 
-        /* Новые секции */
-        .section {
-            min-height: 100vh;
-            padding: 4rem 2rem;
-            background: rgba(0, 0, 0, 0.7);
-            position: relative;
-        }
+       .section-content {
+           max-width: 1200px;
+           margin: 0 auto;
+           color: var(--text-light);
+       }
 
-        .section-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            color: var(--text-light);
-        }
+       .section h2 {
+           text-align: center;
+           margin-bottom: 2rem;
+           font-size: 2.5rem;
+           color: var(--gold-accent);
+       }
 
-        .section h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            color: var(--gold-accent);
-        }
-
-        /* Медиа-запросы */
-        @media (max-width: 768px) {
-            .header-right {
-                gap: 1rem;
-            }
-            .nav-list {
-                gap: 1rem;
-            }
-            .title {
-                font-size: 2.5rem;
-            }
-            .subtitle {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+       /* Медиа-запросы */
+       @media (max-width: 768px) {
+           .header-right {
+               gap: 1rem;
+           }
+           .nav-list {
+               gap: 1rem;
+           }
+           .title {
+               font-size: 2.5rem;
+           }
+           .subtitle {
+               font-size: 1.2rem;
+           }
+       }
+   </style>
 </head>
 <body>
-    <!-- Слайдер -->
-    <div class="slide1"></div>
-    <div class="slide2"></div>
-    <div class="slide4"></div>
-    <div class="slide5"></div>
+   <!-- Слайдер -->
+   <div class="slide1"></div>
+   <div class="slide2"></div>
+   <div class="slide4"></div>
+   <div class="slide5"></div>
 
-    <!-- Шапка -->
-    <header class="header">
-        <h1>VTC Service</h1>
-        <div class="header-right">
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#" class="nav-link">Accueil</a></li>
-                    <li><a href="#services" class="nav-link">Nos services</a></li>
-                    <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
-                    <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
-                </ul>
-            </nav>
-            <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
-        </div>
-    </header>
+   <!-- Шапка -->
+   <header class="header">
+       <h1>VTC Service</h1>
+       <div class="header-right">
+           <nav>
+               <ul class="nav-list">
+                   <li><a href="#" class="nav-link">Accueil</a></li>
+                   <li><a href="#services" class="nav-link">Nos services</a></li>
+                   <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
+                   <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
+               </ul>
+           </nav>
+           <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
+       </div>
+   </header>
 
-    <!-- Новая hero section -->
-    <section class="hero-section">
-        <h2 class="title">Votre chauffeur privé</h2>
-        <p class="subtitle">Transport premium avec chauffeur professionnel</p>
-    </section>
+   <!-- Title и subtitle перемещены сюда -->
+   <h2 class="title">Votre chauffeur privé</h2>
+   <p class="subtitle">Transport premium avec chauffeur professionnel</p>
 
-    <!-- Основной контент -->
-    <main>
-        <div class="main-content">
-        </div>
+   <!-- Основной контент -->
+   <main>
+       <div class="main-content">
+       </div>
 
-        <section id="services" class="section">
-            <div class="section-content">
-                <h2>Nos Services</h2>
-                <!-- Контент для секции услуг -->
-            </div>
-        </section>
+       <section id="services" class="section">
+           <div class="section-content">
+               <h2>Nos Services</h2>
+               <!-- Контент для секции услуг -->
+           </div>
+       </section>
 
-        <section id="vehicle" class="section">
-            <div class="section-content">
-                <h2>Notre Véhicule</h2>
-                <!-- Контент для секции автомобиля -->
-            </div>
-        </section>
+       <section id="vehicle" class="section">
+           <div class="section-content">
+               <h2>Notre Véhicule</h2>
+               <!-- Контент для секции автомобиля -->
+           </div>
+       </section>
 
-        <section id="contact" class="section">
-            <div class="section-content">
-                <h2>Contactez-nous</h2>
-                <div class="contacts">
-                    <div>WhatsApp: +33628619912</div>
-                    <div>Email: luxetransfertvtcparis@gmail.com</div>
-                </div>
-            </div>
-        </section>
-    </main>
+       <section id="contact" class="section">
+           <div class="section-content">
+               <h2>Contactez-nous</h2>
+               <div class="contacts">
+                   <div>WhatsApp: +33628619912</div>
+                   <div>Email: luxetransfertvtcparis@gmail.com</div>
+               </div>
+           </div>
+       </section>
+   </main>
 </body>
 </html>
