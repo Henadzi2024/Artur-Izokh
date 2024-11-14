@@ -1,357 +1,299 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VTC Service - Transport Premium</title>
-<style>
-:root {
-    --text-light: #ffffff;
-    --header-dark: #1e2761;
-    --gold-accent: #d4af37;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTC Service - Transport Premium</title>
+    <style>
+        :root {
+            --text-light: #ffffff;
+            --header-dark: #1e2761;
+            --gold-accent: #d4af37;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-}
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
+        }
 
-@keyframes sliding {
-    0%, 23% {
-        opacity: 1;
-    }
-    24%, 94% {
-        opacity: 0;
-    }
-    95%, 100% {
-        opacity: 1;
-    }
-}
+        @keyframes sliding {
+            0%, 23% {
+                opacity: 1;
+            }
+            24%, 94% {
+                opacity: 0;
+            }
+            95%, 100% {
+                opacity: 1;
+            }
+        }
 
-/* Слайдер */
-.slide1, .slide2, .slide4, .slide5 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+        .slide1, .slide2, .slide4, .slide5 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            -webkit-transform: translate3d(0,0,0); /* Исправление для iOS */
+            transform: translate3d(0,0,0);
+        }
 
-.slide1 {
-    z-index: -1;
-    background-image: url('images/аrtur.jpg');
-    animation: sliding 25s infinite;
-}
+        .slide1 {
+            z-index: -1;
+            background-image: url('images/аrtur.jpg');
+            background-position: center 25%;
+            animation: sliding 25s infinite;
+        }
 
-.slide2 {
-    z-index: -2;
-    background-image: url('images/аrtur-hotel.jpg');
-    animation: sliding 25s infinite 6s;
-}
+        .slide2 {
+            z-index: -2;
+            background-image: url('images/аrtur-hotel.jpg');
+            background-position: center 45%;
+            animation: sliding 25s infinite 6s;
+        }
 
-.slide4 {
-    z-index: -4;
-    background-image: url('images/аrtur-vozle.jpg');
-    animation: sliding 25s infinite 12s;
-}
+        .slide4 {
+            z-index: -4;
+            background-image: url('images/аrtur-vozle.jpg');
+            background-position: center 25%;
+            animation: sliding 25s infinite 12s;
+        }
 
-.slide5 {
-    z-index: -5;
-    background-image: url('images/аrtur-zarulem.jpg');
-    animation: sliding 25s infinite 18s;
-}
+        .slide5 {
+            z-index: -5;
+            background-image: url('images/аrtur-zarulem.jpg');
+            background-position: center 37%;
+            animation: sliding 25s infinite 18s;
+        }
 
-/* Header стили */
-.header {
-    background-color: var(--header-dark);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 100;
-}
+        .header {
+            background-color: var(--header-dark);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Позволяет переносить элементы */
+        }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
 
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap; /* Позволяет пунктам меню переноситься */
+        }
 
-.nav-link {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 1.1rem;
-}
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            display: block; /* Увеличивает область нажатия */
+        }
 
-.nav-link:hover {
-    color: var(--gold-accent);
-}
+        .nav-link:hover {
+            color: var(--gold-accent);
+        }
 
-.header h1 {
-    color: var(--text-light);
-    font-size: 2rem;
-}
+        .header h1 {
+            color: var(--text-light);
+            font-size: 2rem;
+        }
 
-/* Кнопка бронирования */
-.reservation-btn {
-    display: inline-block;
-    background-color: var(--gold-accent);
-    color: var(--text-light);
-    text-align: center;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
+        .reservation-btn {
+            display: inline-block;
+            background-color: var(--gold-accent);
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            white-space: nowrap; /* Предотвращает перенос текста кнопки */
+        }
 
-.reservation-btn:hover {
-    background-color: #b69530;
-    transform: translateY(-2px);
-}
+        .reservation-btn:hover {
+            background-color: #b69530;
+            transform: translateY(-2px);
+        }
 
-/* Основной контент */
-.main-content {
-    text-align: center;
-    padding: 2rem 1rem;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+        .main-content {
+            text-align: center;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.contacts {
-    text-align: center;
-    padding: 1rem;
-    color: var(--text-light);
-}
+        .contacts {
+            text-align: center;
+            padding: 1rem;
+            color: var(--text-light);
+        }
 
-.title {
-    color: #ffcc00;
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    margin: 2rem 0;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
+        .title {
+            color: #ffcc00;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            margin: 2rem 0;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            word-wrap: break-word; /* Предотвращает переполнение текста */
+        }
 
-.subtitle {
-    color: #fff700;
-    font-size: 1.5rem;
-    text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
+        .subtitle {
+            color: #fff700;
+            font-size: 1.5rem;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            word-wrap: break-word;
+        }
 
-/* Секции */
-.section {
-    min-height: 100vh;
-    padding: 4rem 2rem;
-    background: rgba(0, 0, 0, 0.7);
-    position: relative;
-}
+        .section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
 
-.section-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    color: var(--text-light);
-}
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--text-light);
+        }
 
-.section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-    color: var(--gold-accent);
-}
+        .section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+        }
 
-/* Мобильное меню */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    position: relative;
-    z-index: 1001;
-}
+        @media (max-width: 768px) {
+            .header {
+                padding: 0.5rem;
+            }
 
-.menu-toggle span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: var(--text-light);
-    transition: all 0.3s ease-in-out;
-}
+            .header-right {
+                gap: 1rem;
+                width: 100%;
+                justify-content: center;
+                margin-top: 1rem;
+            }
 
-/* Медиа-запросы для мобильной версии */
-@media (max-width: 768px) {
-    /* Фикс слайдера для мобильных */
-    .slide1, .slide2, .slide4, .slide5 {
-        background-attachment: scroll;
-        background-position: center center;
-    }
+            .nav-list {
+                gap: 1rem;
+                justify-content: center;
+                width: 100%;
+            }
 
-    .header-right {
-        gap: 0.5rem;
-    }
+            .nav-link {
+                font-size: 1rem;
+                padding: 0.3rem 0;
+            }
 
-    .menu-toggle {
-        display: flex;
-        margin-left: 1rem;
-    }
+            .title {
+                font-size: 2.5rem;
+                padding: 0 1rem;
+            }
 
-    .nav-list {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 70%;
-        height: 100vh;
-        background-color: var(--header-dark);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: right 0.3s ease-in-out;
-        z-index: 1000;
-    }
+            .subtitle {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+            }
 
-    .nav-list.active {
-        right: 0;
-        display: flex;
-    }
+            .section {
+                padding: 2rem 1rem;
+            }
 
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
+            .contacts div {
+                word-break: break-word; /* Для длинных email и телефонов */
+            }
+        }
 
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+                width: 100%;
+                text-align: center;
+            }
 
-    .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
-
-    .title {
-        font-size: 2.5rem;
-        padding: 0 1rem;
-    }
-
-    .subtitle {
-        font-size: 1.2rem;
-        padding: 0 1rem;
-    }
-
-    .reservation-btn {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-    }
-}
-</style>
+            .reservation-btn {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<!-- Слайдер -->
-<div class="slide1"></div>
-<div class="slide2"></div>
-<div class="slide4"></div>
-<div class="slide5"></div>
+    <!-- Слайдер -->
+    <div class="slide1"></div>
+    <div class="slide2"></div>
+    <div class="slide4"></div>
+    <div class="slide5"></div>
 
-<!-- Шапка -->
-<header class="header">
-    <h1>VTC Service</h1>
-    <div class="header-right">
-        <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
-        <nav>
-            <button class="menu-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-list">
-                <li><a href="#" class="nav-link">Accueil</a></li>
-                <li><a href="#services" class="nav-link">Nos services</a></li>
-                <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
-                <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<h2 class="title">Votre chauffeur privé</h2>
-<p class="subtitle">Transport premium avec chauffeur professionnel</p>
-
-<main>
-    <div class="main-content">
-    </div>
-    <section id="services" class="section">
-        <div class="section-content">
-            <h2>Nos Services</h2>
+    <!-- Шапка -->
+    <header class="header">
+        <h1>VTC Service</h1>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">Accueil</a></li>
+                    <li><a href="#services" class="nav-link">Nos services</a></li>
+                    <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
+                    <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
         </div>
-    </section>
+    </header>
 
-    <section id="vehicle" class="section">
-        <div class="section-content">
-            <h2>Notre Véhicule</h2>
+    <h2 class="title">Votre chauffeur privé</h2>
+    <p class="subtitle">Transport premium avec chauffeur professionnel</p>
+
+    <main>
+        <div class="main-content">
         </div>
-    </section>
 
-    <section id="contact" class="section">
-        <div class="section-content">
-            <h2>Contactez-nous</h2>
-            <div class="contacts">
-                <div>WhatsApp: +33628619912</div>
-                <div>Email: luxetransfertvtcparis@gmail.com</div>
+        <section id="services" class="section">
+            <div class="section-content">
+                <h2>Nos Services</h2>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
 
-<script>
-const menuToggle = document.querySelector('.menu-toggle');
-const navList = document.querySelector('.nav-list');
+        <section id="vehicle" class="section">
+            <div class="section-content">
+                <h2>Notre Véhicule</h2>
+            </div>
+        </section>
 
-menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    navList.classList.toggle('active');
-});
-
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        menuToggle.classList.remove('active');
-        navList.classList.remove('active');
-    });
-});
-
-document.addEventListener('click', (e) => {
-    if (!navList.contains(e.target) && !menuToggle.contains(e.target) && navList.classList.contains('active')) {
-        menuToggle.classList.remove('active');
-        navList.classList.remove('active');
-    }
-});
-</script>
-
+        <section id="contact" class="section">
+            <div class="section-content">
+                <h2>Contactez-nous</h2>
+                <div class="contacts">
+                    <div>WhatsApp: +33628619912</div>
+                    <div>Email: luxetransfertvtcparis@gmail.com</div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
