@@ -1,463 +1,280 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VTC Service - Transport Premium</title>
-    <style>
-        :root {
-            --text-light: #ffffff;
-            --header-dark: #1e2761;
-            --gold-accent: #d4af37;
-        }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>VTC Service - Transport Premium</title>
+   <style>
+       :root {
+           --text-light: #ffffff;
+           --header-dark: #1e2761;
+           --gold-accent: #d4af37;
+       }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
 
-        body {
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-            position: relative;
-        }
+       body {
+           min-height: 100vh;
+           font-family: Arial, sans-serif;
+       }
 
-        /* Слайдер */
-        @keyframes sliding {
-            0%, 23% { opacity: 1; }
-            24%, 94% { opacity: 0; }
-            95%, 100% { opacity: 1; }
-        }
+       @keyframes sliding {
+           0%, 23% {
+               opacity: 1;
+           }
+           24%, 94% {
+               opacity: 0;
+           }
+           95%, 100% {
+               opacity: 1;
+           }
+       }
 
-        .slide1, .slide2, .slide4, .slide5 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+       /* Оригинальный код слайдера */
+       .slide1 {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           z-index: -1;
+           background-image: url('images/аrtur.jpg');
+           background-size: cover;
+           background-position: center 25%;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           animation: sliding 25s infinite;
+       }
 
-        .slide1 {
-            z-index: -1;
-            background-image: url('images/аrtur.jpg');
-            animation: sliding 25s infinite;
-        }
+       .slide2 {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           z-index: -2;
+           background-image: url('images/аrtur-hotel.jpg');
+           background-size: cover;
+           background-position: center 45%;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           animation: sliding 25s infinite 6s;
+       }
 
-        .slide2 {
-            z-index: -2;
-            background-image: url('images/аrtur-hotel.jpg');
-            animation: sliding 25s infinite 6s;
-        }
+       .slide4 {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           z-index: -4;
+           background-image: url('images/аrtur-vozle.jpg');
+           background-size: cover;
+           background-position: center 25%;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           animation: sliding 25s infinite 12s;
+       }
 
-        .slide4 {
-            z-index: -4;
-            background-image: url('images/аrtur-vozle.jpg');
-            animation: sliding 25s infinite 12s;
-        }
+       .slide5 {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           z-index: -5;
+           background-image: url('images/аrtur-zarulem.jpg');
+           background-size: cover;
+           background-position: center 37%;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           animation: sliding 25s infinite 18s;
+       }
 
-        .slide5 {
-            z-index: -5;
-            background-image: url('images/аrtur-zarulem.jpg');
-            animation: sliding 25s infinite 18s;
-        }
+       /* Header стили */
+       .header {
+           background-color: var(--header-dark);
+           padding: 1rem;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+       }
 
-        /* Шапка */
-        .header {
-            background-color: var(--header-dark);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
+       .header-right {
+           display: flex;
+           align-items: center;
+           gap: 2rem;
+       }
 
-        .logo {
-            color: var(--text-light);
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+       .nav-list {
+           display: flex;
+           list-style: none;
+           gap: 2rem;
+       }
 
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
+       .nav-link {
+           color: var(--text-light);
+           text-decoration: none;
+           font-size: 1.1rem;
+       }
 
-        /* Навигация */
-        .nav-list {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+       .nav-link:hover {
+           color: var(--gold-accent);
+       }
 
-        .nav-link {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
+       .header h1 {
+           color: var(--text-light);
+           font-size: 2rem;
+       }
 
-        .nav-link:hover {
-            color: var(--gold-accent);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
+       /* Стили для кнопки бронирования */
+       .reservation-btn {
+           display: inline-block;
+           background-color: var(--gold-accent);
+           color: var(--text-light);
+           text-align: center;
+           padding: 0.5rem 1rem;
+           text-decoration: none;
+           font-size: 1.1rem;
+           text-transform: uppercase;
+           border-radius: 4px;
+           transition: all 0.3s ease;
+       }
 
-        /* Кнопка бронирования */
-        .reservation-btn {
-            display: inline-block;
-            background-color: var(--gold-accent);
-            color: var(--text-light);
-            text-align: center;
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+       .reservation-btn:hover {
+           background-color: #b69530;
+           transform: translateY(-2px);
+       }
 
-        .reservation-btn:hover {
-            background-color: #b69530;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
+       /* Основной контент */
+       .main-content {
+           text-align: center;
+           padding: 2rem 1rem;
+           min-height: 100vh;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+       }
 
-        /* Бургер-меню */
-        .burger-menu {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-        }
+       .contacts {
+           text-align: center;
+           padding: 1rem;
+           color: var(--text-light);
+       }
 
-        .burger-line {
-            width: 30px;
-            height: 3px;
-            background-color: var(--text-light);
-            transition: all 0.3s ease;
-        }
+   .title {
+       color: #ffcc00;
+       font-size: 3.5rem;
+       text-transform: uppercase;
+       margin: 2rem 0;
+       text-align: center;
+       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* только тень */
+}
 
-        .burger-menu.active .burger-line:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
+   .subtitle {
+       color: #fff700;
+       font-size: 1.5rem;
+       text-align: center;
+       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);  /* только тень */
+       }
 
-        .burger-menu.active .burger-line:nth-child(2) {
-            opacity: 0;
-        }
+       /* Новые секции */
+       .section {
+           min-height: 100vh;
+           padding: 4rem 2rem;
+           background: rgba(0, 0, 0, 0.7);
+           position: relative;
+       }
 
-        .burger-menu.active .burger-line:nth-child(3) {
-            transform: rotate(-45deg) translate(8px, -8px);
-        }
+       .section-content {
+           max-width: 1200px;
+           margin: 0 auto;
+           color: var(--text-light);
+       }
 
-        /* Мобильное меню */
-        .nav-mobile {
-            display: none;
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 300px;
-            height: 100vh;
-            background-color: var(--header-dark);
-            padding: 100px 20px 20px;
-            transition: right 0.3s ease;
-            z-index: 999;
-            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-        }
+       .section h2 {
+           text-align: center;
+           margin-bottom: 2rem;
+           font-size: 2.5rem;
+           color: var(--gold-accent);
+       }
 
-        .nav-mobile.active {
-            right: 0;
-        }
-
-        /* Основной контент */
-        .main-content {
-            padding-top: 80px;
-            text-align: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .title {
-            color: var(--text-light);
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            margin: 2rem 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .subtitle {
-            color: var(--text-light);
-            font-size: 1.5rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Секции */
-        .section {
-            min-height: 100vh;
-            padding: 6rem 2rem;
-            background: rgba(0, 0, 0, 0.7);
-            position: relative;
-        }
-
-        .section-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            color: var(--text-light);
-        }
-
-        .section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: var(--gold-accent);
-            text-transform: uppercase;
-        }
-
-        /* Overlay */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-            backdrop-filter: blur(3px);
-        }
-
-        .overlay.active {
-            display: block;
-        }
-
-        /* Адаптивные стили */
-        @media (max-width: 768px) {
-            .burger-menu {
-                display: flex;
-            }
-
-            .header-right nav {
-                display: none;
-            }
-
-            .nav-mobile {
-                display: block;
-            }
-
-            .nav-list {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .nav-mobile .nav-link {
-                display: block;
-                padding: 15px 20px;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                font-size: 1.2rem;
-            }
-
-            .header-right {
-                gap: 1rem;
-            }
-
-            .title {
-                font-size: 2.2rem;
-                padding: 0 1rem;
-                margin: 1rem 0;
-            }
-
-            .subtitle {
-                font-size: 1.1rem;
-                padding: 0 2rem;
-            }
-
-            .section {
-                padding: 4rem 1.5rem;
-            }
-
-            .section h2 {
-                font-size: 1.8rem;
-            }
-
-            .reservation-btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            /* Улучшаем прокрутку на мобильных */
-            .section {
-                scroll-margin-top: 70px;
-            }
-            
-            /* Оптимизация для маленьких экранов */
-            @media (max-height: 600px) {
-                .nav-mobile {
-                    padding-top: 70px;
-                }
-                
-                .title {
-                    font-size: 1.8rem;
-                }
-                
-                .subtitle {
-                    font-size: 1rem;
-                }
-            }
-        }
-    </style>
+       /* Медиа-запросы */
+       @media (max-width: 768px) {
+           .header-right {
+               gap: 1rem;
+           }
+           .nav-list {
+               gap: 1rem;
+           }
+           .title {
+               font-size: 2.5rem;
+           }
+           .subtitle {
+               font-size: 1.2rem;
+           }
+       }
+   </style>
 </head>
 <body>
-    <!-- Слайдер -->
-    <div class="slide1"></div>
-    <div class="slide2"></div>
-    <div class="slide4"></div>
-    <div class="slide5"></div>
+   <!-- Слайдер -->
+   <div class="slide1"></div>
+   <div class="slide2"></div>
+   <div class="slide4"></div>
+   <div class="slide5"></div>
 
-    <!-- Шапка -->
-    <header class="header">
-        <a href="#" class="logo">VTC Service</a>
-        <div class="header-right">
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#" class="nav-link">Accueil</a></li>
-                    <li><a href="#services" class="nav-link">Nos services</a></li>
-                    <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
-                    <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
-                </ul>
-            </nav>
-            <div class="burger-menu" id="burgerMenu">
-                <div class="burger-line"></div>
-                <div class="burger-line"></div>
-                <div class="burger-line"></div>
-            </div>
-            <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
-        </div>
-    </header>
+   <!-- Шапка -->
+   <header class="header">
+       <h1>VTC Service</h1>
+       <div class="header-right">
+           <nav>
+               <ul class="nav-list">
+                   <li><a href="#" class="nav-link">Accueil</a></li>
+                   <li><a href="#services" class="nav-link">Nos services</a></li>
+                   <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
+                   <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
+               </ul>
+           </nav>
+           <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
+       </div>
+   </header>
 
-    <!-- Мобильное меню -->
-    <nav class="nav-mobile" id="navMobile">
-        <ul class="nav-list">
-            <li><a href="#" class="nav-link">Accueil</a></li>
-            <li><a href="#services" class="nav-link">Nos services</a></li>
-            <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
-            <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
-        </ul>
-    </nav>
+   <!-- Title и subtitle перемещены сюда -->
+   <h2 class="title">Votre chauffeur privé</h2>
+   <p class="subtitle">Transport premium avec chauffeur professionnel</p>
 
-    <!-- Overlay для мобильного меню -->
-    <div class="overlay" id="overlay"></div>
+   <!-- Основной контент -->
+   <main>
+       <div class="main-content">
+       </div>
 
-    <!-- Основной контент -->
-    <main>
-        <div class="main-content">
-            <h2 class="title">Votre chauffeur privé</h2>
-            <p class="subtitle">Transport premium avec chauffeur professionnel</p>
-        </div>
+       <section id="services" class="section">
+           <div class="section-content">
+               <h2>Nos Services</h2>
+               <!-- Контент для секции услуг -->
+           </div>
+       </section>
 
-        <section id="services" class="section">
-            <div class="section-content">
-                <h2>Nos Services</h2>
-                <!-- Здесь будет контент секции услуг -->
-            </div>
-        </section>
+       <section id="vehicle" class="section">
+           <div class="section-content">
+               <h2>Notre Véhicule</h2>
+               <!-- Контент для секции автомобиля -->
+           </div>
+       </section>
 
-        <section id="vehicle" class="section">
-            <div class="section-content">
-                <h2>Notre Véhicule</h2>
-                <!-- Здесь будет контент секции автомобиля -->
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="section-content">
-                <h2>Contactez-nous</h2>
-                <div class="contacts">
-                    <div>WhatsApp: +33628619912</div>
-                    <div>Email: luxetransfertvtcparis@gmail.com</div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // Управление мобильным меню
-        const burgerMenu = document.getElementById('burgerMenu');
-        const navMobile = document.getElementById('navMobile');
-        const overlay = document.getElementById('overlay');
-        let isMenuOpen = false;
-
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            burgerMenu.classList.toggle('active');
-            navMobile.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
-        }
-
-        burgerMenu.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu);
-
-        // Закрытие меню при клике на ссылку
-        document.querySelectorAll('.nav-mobile .nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                toggleMenu();
-            });
-        });
-
-        // Плавный скролл к секциям
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    const section = document.querySelector(href);
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = section.offsetTop - headerHeight;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Оптимизация производительности для мобильных устройств
-        let lastKnownScrollPosition = 0;
-        let ticking = false;
-
-        function doSomething(scrollPos) {
-            // Здесь можно добавить дополнительную логику при скролле
-        }
-
-        document.addEventListener('scroll', () => {
-            lastKnownScrollPosition = window.scrollY;
-
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
+       <section id="contact" class="section">
+           <div class="section-content">
+               <h2>Contactez-nous</h2>
+               <div class="contacts">
+                   <div>WhatsApp: +33628619912</div>
+                   <div>Email: luxetransfertvtcparis@gmail.com</div>
+               </div>
+           </div>
+       </section>
+   </main>
+</body>
+</html>
