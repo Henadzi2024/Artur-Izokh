@@ -199,8 +199,27 @@
             padding: 2rem;
         }
 
-        .vehicle-card {
-            margin-bottom: 1rem;
+        .vehicle-card > div {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            height: 340px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vehicle-card img {
+            width: 110%;
+            margin: 0 0 1rem -5%;
+            object-fit: contain;
+        }
+
+        .car-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         @media (max-width: 768px) {
@@ -293,35 +312,11 @@
         <section id="vehicle" class="section">
             <div class="section-content">
                 <h2>Notre Véhicule</h2>
-                  .vehicle-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
-        }
-
-        .vehicle-card > div {
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 1.5rem;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.1);
-            height: 360px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .vehicle-card .car-info {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
                 <div class="vehicle-grid">
                     <!-- E-class -->
                     <div class="vehicle-card">
-                        <div style="border-right: none;">
-                            <img src="images/mercedes-e-class.png" alt="Mercedes E-class" style="width: 130%; margin-left: -15%; margin-bottom: 1rem;">
+                        <div>
+                            <img src="images/mercedes-e-class.png" alt="Mercedes E-class">
                             <div class="car-info">
                                 <h3 style="color: #d4af37; margin-bottom: 1rem;">Mercedes E-class</h3>
                                 <div style="color: white; text-align: left;">
@@ -335,8 +330,8 @@
 
                     <!-- S-class -->
                     <div class="vehicle-card">
-                        <div style="border-right: none;">
-                            <img src="images/mercedes-s-class.png" alt="Mercedes S-class" style="width: 130%; margin-left: -15%; margin-bottom: 1rem;">
+                        <div>
+                            <img src="images/mercedes-s-class.png" alt="Mercedes S-class">
                             <div class="car-info">
                                 <h3 style="color: #d4af37; margin-bottom: 1rem;">Mercedes S-class</h3>
                                 <div style="color: white; text-align: left;">
@@ -350,8 +345,8 @@
 
                     <!-- V-class -->
                     <div class="vehicle-card">
-                        <div style="border-right: none; border-top: none;">
-                            <img src="images/mercedes-v-class.png" alt="Mercedes V-class" style="width: 115%; margin: -10% 0 1rem -7.5%;">
+                        <div>
+                            <img src="images/mercedes-v-class.png" alt="Mercedes V-class">
                             <div class="car-info">
                                 <h3 style="color: #d4af37; margin-bottom: 1rem;">Mercedes V-class</h3>
                                 <div style="color: white; text-align: left;">
@@ -359,8 +354,12 @@
                                     <p>🧳 1 à 7 bagages</p>
                                     <p>⭐ Gamme Van</p>
                                 </div>
-      
-                            </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="contact" class="section">
             <div class="section-content">
