@@ -21,55 +21,7 @@
             min-height: 100vh;
             font-family: Arial, sans-serif;
             overflow-x: hidden;
-        }
-
-        @keyframes sliding {
-            0% { opacity: 1; }
-            20% { opacity: 1; }
-            25% { opacity: 0; }
-            95% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .slide1, .slide2, .slide4, .slide5 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-        }
-
-        .slide1 {
-            z-index: -1;
-            background-image: url('images/аrtur.jpg');
-            background-position: center 25%;
-            animation: sliding 25s infinite;
-        }
-
-        .slide2 {
-            z-index: -2;
-            background-image: url('images/аrtur-hotel.jpg');
-            background-position: center 45%;
-            animation: sliding 25s infinite 6s;
-        }
-
-        .slide4 {
-            z-index: -4;
-            background-image: url('images/аrtur-vozle.jpg');
-            background-position: center 25%;
-            animation: sliding 25s infinite 12s;
-        }
-
-        .slide5 {
-            z-index: -5;
-            background-image: url('images/аrtur-zarulem.jpg');
-            background-position: center 37%;
-            animation: sliding 25s infinite 18s;
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .header {
@@ -79,6 +31,10 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         .header-logo {
@@ -137,43 +93,32 @@
         }
 
         .main-content {
-            text-align: center;
-            padding: 2rem 1rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .contacts {
-            text-align: center;
-            padding: 1rem;
-            color: var(--text-light);
+            padding-top: 80px; /* Account for fixed header */
         }
 
         .title {
-            color: #ffcc00;
+            color: var(--gold-accent);
             font-size: 3.5rem;
             text-transform: uppercase;
             margin: 2rem 0;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
+            padding-top: 2rem;
         }
 
         .subtitle {
-            color: #fff700;
+            color: var(--text-light);
             font-size: 1.5rem;
             text-align: center;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
+            margin-bottom: 2rem;
         }
 
         .section {
-            min-height: 100vh;
             padding: 4rem 2rem;
-            background: rgba(0, 0, 0, 0.7);
-            position: relative;
+            margin-top: 2rem;
         }
 
         .section-content {
@@ -191,7 +136,7 @@
 
         .vehicle-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -203,31 +148,21 @@
             padding: 2rem;
             border-radius: 10px;
             background: rgba(30, 39, 97, 0.8);
-            height: 450px;
-            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
         }
 
         .vehicle-card img {
             width: 100%;
-            height: 260px;
+            height: auto;
+            max-height: 260px;
             object-fit: contain;
-            margin: 0 0 1.5rem 0;
-        }
-
-        /* Специальные стили для третьей карточки (V-class) */
-        .vehicle-card:nth-child(3) img {
-            height: 280px;
-            margin: 0 0 0.8rem 0;
-        }
-
-        .vehicle-card:nth-child(3) .car-info {
-            margin-top: -8px;
+            margin-bottom: 1.5rem;
         }
 
         .car-info {
-            height: 100%;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
@@ -235,7 +170,7 @@
         .car-info h3 {
             color: var(--gold-accent);
             font-size: 1.5rem;
-            margin: 0 0 1.5rem 0;
+            margin-bottom: 1.5rem;
             text-align: center;
         }
 
@@ -245,8 +180,14 @@
             gap: 1rem;
         }
 
-        .car-info p {
-            margin: 0;
+        .contacts {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+        }
+
+        .contacts div {
+            margin: 1rem 0;
             font-size: 1.1rem;
         }
 
@@ -254,59 +195,42 @@
             .header {
                 padding: 0.5rem;
             }
+            
             .header-right {
-                gap: 1rem;
                 width: 100%;
                 justify-content: center;
+                gap: 1rem;
                 margin-top: 1rem;
             }
+
             .nav-list {
-                gap: 1rem;
-                justify-content: center;
                 width: 100%;
+                justify-content: center;
+                gap: 1rem;
             }
-            .nav-link {
-                font-size: 1rem;
-                padding: 0.3rem 0;
+
+            .vehicle-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
             }
+
             .title {
                 font-size: 2rem;
                 padding: 0 1rem;
             }
+
             .subtitle {
                 font-size: 1.2rem;
                 padding: 0 1rem;
             }
+
             .section {
                 padding: 2rem 1rem;
-            }
-            .vehicle-grid {
-                grid-template-columns: 1fr;
-            }
-            .contacts div {
-                word-break: break-word;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.5rem;
-                width: 100%;
-                text-align: center;
-            }
-            .reservation-btn {
-                font-size: 1rem;
-                padding: 0.4rem 0.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="slide1"></div>
-    <div class="slide2"></div>
-    <div class="slide4"></div>
-    <div class="slide5"></div>
-
     <header class="header">
         <img src="images/logotip.png" alt="VTC Service" class="header-logo">
         <div class="header-right">
@@ -322,16 +246,14 @@
         </div>
     </header>
 
-    <h2 class="title">Votre chauffeur privé</h2>
-    <p class="subtitle">Transport premium avec chauffeur professionnel</p>
-
-    <main>
-        <div class="main-content">
-        </div>
+    <main class="main-content">
+        <h1 class="title">Votre chauffeur privé</h1>
+        <p class="subtitle">Transport premium avec chauffeur professionnel</p>
 
         <section id="services" class="section">
             <div class="section-content">
                 <h2>Nos Services</h2>
+                <!-- Add services content here -->
             </div>
         </section>
 
@@ -341,7 +263,7 @@
                 <div class="vehicle-grid">
                     <div class="vehicle-card">
                         <div>
-                            <img src="images/mercedes-e-class.png" alt="Mercedes E-class" loading="lazy" decoding="async">
+                            <img src="images/mercedes-e-class.png" alt="Mercedes E-class" loading="lazy">
                             <div class="car-info">
                                 <h3>Mercedes E-class</h3>
                                 <div>
@@ -352,10 +274,9 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="vehicle-card">
                         <div>
-                            <img src="images/mercedes-s-class.png" alt="Mercedes S-class" loading="lazy" decoding="async">
+                            <img src="images/mercedes-s-class.png" alt="Mercedes S-class" loading="lazy">
                             <div class="car-info">
                                 <h3>Mercedes S-class</h3>
                                 <div>
@@ -366,10 +287,9 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="vehicle-card">
                         <div>
-                            <img src="images/mercedes-v-class.png" alt="Mercedes V-class" loading="lazy" decoding="async">
+                            <img src="images/mercedes-v-class.png" alt="Mercedes V-class" loading="lazy">
                             <div class="car-info">
                                 <h3>Mercedes V-class</h3>
                                 <div>
@@ -388,8 +308,8 @@
             <div class="section-content">
                 <h2>Contactez-nous</h2>
                 <div class="contacts">
-                    <div>WhatsApp: +33628619912</div>
-                    <div>Email: luxetransfertvtcparis@gmail.com</div>
+                    <div>WhatsApp: <a href="tel:+33628619912" style="color: var(--gold-accent);">+33 6 28 61 99 12</a></div>
+                    <div>Email: <a href="mailto:luxetransfertvtcparis@gmail.com" style="color: var(--gold-accent);">luxetransfertvtcparis@gmail.com</a></div>
                 </div>
             </div>
         </section>
