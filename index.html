@@ -20,7 +20,7 @@
         body {
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
+            overflow-x: hidden;
         }
 
         @keyframes sliding {
@@ -44,7 +44,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            -webkit-transform: translate3d(0,0,0); /* Исправление для iOS */
+            -webkit-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
         }
 
@@ -82,7 +82,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Позволяет переносить элементы */
+            flex-wrap: wrap;
+        }
+
+        /* ДОБАВЛЕН НОВЫЙ СТИЛЬ */
+        .header-logo {
+            height: 50px;
+            width: auto;
         }
 
         .header-right {
@@ -95,7 +101,7 @@
             display: flex;
             list-style: none;
             gap: 2rem;
-            flex-wrap: wrap; /* Позволяет пунктам меню переноситься */
+            flex-wrap: wrap;
         }
 
         .nav-link {
@@ -103,7 +109,7 @@
             text-decoration: none;
             font-size: 1.1rem;
             padding: 0.5rem 0;
-            display: block; /* Увеличивает область нажатия */
+            display: block;
         }
 
         .nav-link:hover {
@@ -126,7 +132,7 @@
             text-transform: uppercase;
             border-radius: 4px;
             transition: all 0.3s ease;
-            white-space: nowrap; /* Предотвращает перенос текста кнопки */
+            white-space: nowrap;
         }
 
         .reservation-btn:hover {
@@ -156,7 +162,7 @@
             margin: 2rem 0;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            word-wrap: break-word; /* Предотвращает переполнение текста */
+            word-wrap: break-word;
         }
 
         .subtitle {
@@ -191,41 +197,34 @@
             .header {
                 padding: 0.5rem;
             }
-
             .header-right {
                 gap: 1rem;
                 width: 100%;
                 justify-content: center;
                 margin-top: 1rem;
             }
-
             .nav-list {
                 gap: 1rem;
                 justify-content: center;
                 width: 100%;
             }
-
             .nav-link {
                 font-size: 1rem;
                 padding: 0.3rem 0;
             }
-
             .title {
                 font-size: 2.5rem;
                 padding: 0 1rem;
             }
-
             .subtitle {
                 font-size: 1.2rem;
                 padding: 0 1rem;
             }
-
             .section {
                 padding: 2rem 1rem;
             }
-
             .contacts div {
-                word-break: break-word; /* Для длинных email и телефонов */
+                word-break: break-word;
             }
         }
 
@@ -235,7 +234,6 @@
                 width: 100%;
                 text-align: center;
             }
-
             .reservation-btn {
                 font-size: 1rem;
                 padding: 0.4rem 0.8rem;
@@ -252,7 +250,8 @@
 
     <!-- Шапка -->
     <header class="header">
-        <h1>VTC Service</h1>
+        <!-- ЗАМЕНЕН h1 НА img -->
+        <img src="images/logotip.png" alt="VTC Service" class="header-logo">
         <div class="header-right">
             <nav>
                 <ul class="nav-list">
