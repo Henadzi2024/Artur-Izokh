@@ -25,9 +25,9 @@
 
         @keyframes sliding {
             0% { opacity: 1; }
-            20% { opacity: 1; }
-            33% { opacity: 0; }
-            87% { opacity: 0; }
+            22% { opacity: 1; }
+            25% { opacity: 0; }
+            97% { opacity: 0; }
             100% { opacity: 1; }
         }
 
@@ -38,36 +38,38 @@
             width: 100%;
             height: 100%;
             background-size: cover;
-            background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             -webkit-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
-            will-change: opacity;
-            backface-visibility: hidden;
+            opacity: 0;
         }
 
         .slide1 {
-            z-index: 4;
+            z-index: -1;
             background-image: url('images/аrtur.jpg');
+            background-position: center 25%;
             animation: sliding 24s infinite 0s;
         }
 
         .slide2 {
-            z-index: 3;
+            z-index: -2;
             background-image: url('images/аrtur-hotel.jpg');
+            background-position: center 45%;
             animation: sliding 24s infinite 6s;
         }
 
         .slide4 {
-            z-index: 2;
+            z-index: -4;
             background-image: url('images/аrtur-vozle.jpg');
+            background-position: center 25%;
             animation: sliding 24s infinite 12s;
         }
 
         .slide5 {
-            z-index: 1;
+            z-index: -5;
             background-image: url('images/аrtur-zarulem.jpg');
+            background-position: center 37%;
             animation: sliding 24s infinite 18s;
         }
 
@@ -242,45 +244,35 @@
         @media (max-width: 768px) {
             .header {
                 padding: 0.5rem;
-                background-color: var(--header-dark);
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: space-between;
+                min-height: 60px;
             }
 
             .header-logo {
                 height: 40px;
-                margin-right: 1rem;
             }
 
             .header-right {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                flex: 1;
-                justify-content: flex-end;
+                width: 100%;
+                justify-content: center;
+                gap: 0.5rem;
+                margin-top: 0;
             }
 
             .nav-list {
-                display: flex;
+                width: 100%;
+                justify-content: center;
                 gap: 1rem;
-                margin: 0;
-                padding: 0;
-                list-style: none;
-                align-items: center;
+                margin-top: 0.2rem;
             }
-
+            
             .nav-link {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 padding: 0.2rem 0;
-                white-space: nowrap;
             }
 
             .reservation-btn {
                 padding: 0.4rem 0.8rem;
-                font-size: 0.9rem;
-                white-space: nowrap;
+                font-size: 1rem;
             }
 
             .title {
@@ -309,14 +301,21 @@
 
         @media (max-width: 480px) {
             .header {
+                position: relative;
                 padding: 0.5rem;
             }
 
+            .header-right {
+                margin-top: 0;
+            }
+
             .nav-list {
-                order: 2;
-                width: 100%;
-                justify-content: center;
                 margin-top: 0.5rem;
+            }
+
+            .reservation-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 1rem;
             }
         }
     </style>
