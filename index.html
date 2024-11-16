@@ -78,11 +78,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
+            flex-wrap: wrap;
         }
 
         .header-logo {
@@ -100,6 +96,7 @@
             display: flex;
             list-style: none;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .nav-link {
@@ -141,7 +138,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-top: 70px;
         }
 
         .contacts {
@@ -267,32 +263,20 @@
 
         @media (max-width: 768px) {
             .header {
-                padding: 0.5rem 1rem;
-            }
-
-            .header-logo {
-                height: 40px;
-            }
-
-            .nav-list {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: var(--header-dark);
-                flex-direction: column;
-                align-items: center;
-                padding: 1rem;
-                gap: 1rem;
-                display: none;
-            }
-
-            .nav-list.active {
-                display: flex;
+                padding: 0.5rem;
             }
 
             .header-right {
                 gap: 1rem;
+            }
+
+            .nav-list {
+                gap: 1rem;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+                padding: 0.3rem 0;
             }
 
             .title {
