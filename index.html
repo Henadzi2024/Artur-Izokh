@@ -184,6 +184,7 @@
             color: var(--gold-accent);
         }
 
+        /* Стили для секции услуг */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -210,6 +211,7 @@
             margin: 0;
         }
 
+        /* Стили для карточек автомобилей */
         .vehicle-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -261,53 +263,23 @@
             font-size: 1.1rem;
         }
 
+        /* Медиа-запросы для мобильных устройств */
         @media (max-width: 768px) {
             .header {
-                flex-direction: column;
-                padding: 0;
-            }
-
-            .header-top {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0.5rem 1rem;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
-            }
-
-            .header-logo {
-                height: 40px;
+                padding: 0.5rem;
             }
 
             .header-right {
-                width: 100%;
-                margin: 0;
-                padding: 0;
-            }
-
-            nav {
-                width: 100%;
+                gap: 1rem;
             }
 
             .nav-list {
-                width: 100%;
-                margin: 0;
-                padding: 0.5rem;
-                display: flex;
-                justify-content: space-between;
-                gap: 0;
+                gap: 1rem;
             }
 
             .nav-link {
-                font-size: 0.9rem;
-                padding: 0.5rem 0;
-                white-space: nowrap;
-            }
-
-            .reservation-btn {
-                font-size: 0.9rem;
-                padding: 0.4rem 0.8rem;
+                font-size: 1rem;
+                padding: 0.3rem 0;
             }
 
             .title {
@@ -332,11 +304,23 @@
             .vehicle-card img {
                 height: 180px;
             }
+
+            .contacts div {
+                word-break: break-word;
+            }
         }
 
         @media (max-width: 480px) {
-            .nav-link {
-                font-size: 0.8rem;
+            .header h1 {
+                font-size: 1.5rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .reservation-btn {
+                width: auto;
+                padding: 0.4rem 0.8rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -348,10 +332,7 @@
     <div class="slide5"></div>
 
     <header class="header">
-        <div class="header-top">
-            <img src="images/logotip.png" alt="VTC Service" class="header-logo">
-            <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
-        </div>
+        <img src="images/logotip.png" alt="VTC Service" class="header-logo">
         <div class="header-right">
             <nav>
                 <ul class="nav-list">
@@ -361,6 +342,7 @@
                     <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
                 </ul>
             </nav>
+            <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
         </div>
     </header>
 
