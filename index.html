@@ -42,6 +42,7 @@
             background-attachment: fixed;
             -webkit-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
+            opacity: 0;
         }
 
         .slide1 {
@@ -70,6 +71,7 @@
             background-image: url('images/аrtur-zarulem.jpg');
             background-position: center 37%;
             animation: sliding 25s infinite 18s;
+            opacity: 1;
         }
 
         .header {
@@ -243,20 +245,40 @@
         @media (max-width: 768px) {
             .header {
                 padding: 0.5rem;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .header-logo {
+                height: 40px;
             }
 
             .header-right {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
                 gap: 0.5rem;
-                margin-top: 0.5rem;
+            }
+
+            .nav-list {
+                order: 2;
+                justify-content: flex-end;
+                gap: 1rem;
             }
             
             .nav-link {
                 padding: 0.2rem 0;
+                font-size: 1rem;
+            }
+
+            .reservation-btn {
+                order: 1;
             }
 
             .title {
                 font-size: 2rem;
                 padding: 0 1rem;
+                margin-top: 1rem;
             }
 
             .subtitle {
@@ -285,9 +307,14 @@
             }
 
             .reservation-btn {
-                width: auto;
                 padding: 0.4rem 0.8rem;
                 font-size: 1rem;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 0.5rem;
             }
         }
     </style>
@@ -301,6 +328,7 @@
     <header class="header">
         <img src="images/logotip.png" alt="VTC Service" class="header-logo">
         <div class="header-right">
+            <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
             <nav>
                 <ul class="nav-list">
                     <li><a href="#" class="nav-link">Accueil</a></li>
@@ -309,7 +337,6 @@
                     <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
                 </ul>
             </nav>
-            <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
         </div>
     </header>
 
