@@ -78,6 +78,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .header-logo {
@@ -95,6 +96,7 @@
             display: flex;
             list-style: none;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .nav-link {
@@ -182,6 +184,7 @@
             color: var(--gold-accent);
         }
 
+        /* Стили для секции услуг */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -208,6 +211,7 @@
             margin: 0;
         }
 
+        /* Стили для карточек автомобилей */
         .vehicle-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -259,6 +263,7 @@
             font-size: 1.1rem;
         }
 
+        /* Медиа-запросы для мобильных устройств */
         @media (max-width: 768px) {
             .header {
                 padding: 0.5rem;
@@ -304,6 +309,20 @@
                 word-break: break-word;
             }
         }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .reservation-btn {
+                width: auto;
+                padding: 0.4rem 0.8rem;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -311,9 +330,6 @@
     <div class="slide2"></div>
     <div class="slide4"></div>
     <div class="slide5"></div>
-
-    <h2 class="title">Votre chauffeur privé</h2>
-    <p class="subtitle">Transport premium avec chauffeur professionnel</p>
 
     <header class="header">
         <img src="images/logotip.png" alt="VTC Service" class="header-logo">
@@ -329,6 +345,9 @@
             <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
         </div>
     </header>
+
+    <h2 class="title">Votre chauffeur privé</h2>
+    <p class="subtitle">Transport premium avec chauffeur professionnel</p>
 
     <main>
         <div class="main-content">
