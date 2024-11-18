@@ -23,40 +23,55 @@
             overflow-x: hidden;
         }
 
-        /* Новые стили для слайдера */
-        .slide {
-            position: absolute;
+        @keyframes sliding {
+            0% { opacity: 1; }
+            20% { opacity: 1; }
+            25% { opacity: 0; }
+            95% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .slide1, .slide2, .slide4, .slide5 {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-size: cover;
-            background-position: center;
             background-repeat: no-repeat;
-            opacity: 0;
-            transition: opacity 1s ease;
-            z-index: -1;
-        }
-
-        .slide.active {
-            opacity: 1;
+            background-attachment: fixed;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
         }
 
         .slide1 {
+            z-index: -1;
             background-image: url('images/аrtur.jpg');
+            background-position: center 25%;
+            animation: sliding 25s infinite;
         }
 
         .slide2 {
+            z-index: -2;
             background-image: url('images/аrtur-hotel.jpg');
+            background-position: center 45%;
+            animation: sliding 25s infinite 6s;
         }
 
         .slide4 {
+            z-index: -4;
             background-image: url('images/аrtur-vozle.jpg');
+            background-position: center 25%;
+            animation: sliding 25s infinite 12s;
         }
 
         .slide5 {
+            z-index: -5;
             background-image: url('images/аrtur-zarulem.jpg');
+            background-position: center 37%;
+            animation: sliding 25s infinite 18s;
         }
+
         .header {
             background-color: var(--header-dark);
             padding: 1rem;
@@ -64,8 +79,6 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
         }
 
         .header-logo {
@@ -145,8 +158,6 @@
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
-            position: relative;
-            z-index: 1;
         }
 
         .subtitle {
@@ -155,9 +166,8 @@
             text-align: center;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
-            position: relative;
-            z-index: 1;
         }
+
         .section {
             min-height: 100vh;
             padding: 4rem 2rem;
@@ -319,10 +329,10 @@
     </style>
 </head>
 <body>
-    <div class="slide slide1"></div>
-    <div class="slide slide2"></div>
-    <div class="slide slide4"></div>
-    <div class="slide slide5"></div>
+    <div class="slide1"></div>
+    <div class="slide2"></div>
+    <div class="slide4"></div>
+    <div class="slide5"></div>
 
     <header class="header">
         <img src="images/logotip.png" alt="VTC Service" class="header-logo">
@@ -339,10 +349,11 @@
         </div>
     </header>
 
+    <h2 class="title">Votre chauffeur privé</h2>
+    <p class="subtitle">Transport premium avec chauffeur professionnel</p>
+
     <main>
         <div class="main-content">
-            <h2 class="title">Votre chauffeur privé</h2>
-            <p class="subtitle">Transport premium avec chauffeur professionnel</p>
         </div>
 
         <section id="services" class="section">
@@ -361,7 +372,7 @@
                         <h3>🎨 TRAJETS PONCTUELS VTC</h3>
                         <p>La société ARTIZ SERVICE assure vos déplacements sur Paris et l'Île-de-France. Un service haut de gamme pour tous vos trajets.</p>
                     </div>
-                    <div class="service-item">
+                     <div class="service-item">
                         <h3>🚗 TRANSFERT LONGUE DISTANCE</h3>
                         <p>La société ARTIZ SERVICE propose ses Berlines et Vans VIP pour l'Europe et les grandes villes françaises (Deauville, Nice, Marseille, Bordeaux, Île de Ré, Mont Saint-Michel)etc.</p>
                     </div>
@@ -432,23 +443,5 @@
             </div>
         </section>
     </main>
-
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        showSlide(0);
-        setInterval(nextSlide, 6000);
-    </script>
 </body>
 </html>
