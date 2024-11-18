@@ -48,7 +48,7 @@
             z-index: -1;
             background-image: url('images/аrtur.jpg');
             background-position: center 25%;
-            animation: sliding 25s infinite;
+            animation: sliding 25s infinite 0s;
         }
 
         .slide2 {
@@ -59,14 +59,14 @@
         }
 
         .slide4 {
-            z-index: -4;
+            z-index: -3;
             background-image: url('images/аrtur-vozle.jpg');
             background-position: center 25%;
             animation: sliding 25s infinite 12s;
         }
 
         .slide5 {
-            z-index: -5;
+            z-index: -4;
             background-image: url('images/аrtur-zarulem.jpg');
             background-position: center 37%;
             animation: sliding 25s infinite 18s;
@@ -274,6 +274,11 @@
         @media (max-width: 768px) {
             .header {
                 padding: 0.5rem;
+                justify-content: space-between;
+            }
+
+            .header-logo {
+                height: 40px;
             }
 
             .header-right {
@@ -282,6 +287,9 @@
 
             .nav-list {
                 gap: 1rem;
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 0.5rem;
             }
 
             .nav-link {
