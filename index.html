@@ -41,21 +41,19 @@
             z-index: 0;
         }
 
-        .slide1 {
-            background-image: url('images/аrtur.jpg');
-        }
-
-        .slide2 {
-            background-image: url('images/аrtur-hotel.jpg');
-        }
-
-        .slide4 {
-            background-image: url('images/аrtur-vozle.jpg');
-        }
-
-        .slide5 {
-            background-image: url('images/аrtur-zarulem.jpg');
-        }
+     .slide1, .slide2, .slide4, .slide5 {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-size: cover;
+         background-position: center center;  /* ДОБАВИТЬ ЭТУ СТРОКУ */
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+        -webkit-transform: translate3d(0,0,0);
+         transform: translate3d(0,0,0);
+     }
 
         .header {
             background-color: var(--header-dark);
