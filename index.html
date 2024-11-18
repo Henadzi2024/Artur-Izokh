@@ -146,6 +146,10 @@
             color: var(--text-light);
         }
 
+        .contacts div {
+            font-size: 1.5em;
+        }
+
         .title {
             color: #ffcc00;
             font-size: 3.5rem;
@@ -186,9 +190,15 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             padding: 1rem;
+        }
+
+        .services-grid div:nth-last-child(-n+2) {
+            grid-column: span 3;
+            width: 50%;
+            margin: 0 auto;
         }
 
         .service-item {
@@ -304,20 +314,16 @@
 
             .contacts div {
                 word-break: break-word;
+                font-size: 1.5em;
             }
-        }
 
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.5rem;
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid div:nth-last-child(-n+2) {
+                grid-column: auto;
                 width: 100%;
-                text-align: center;
-            }
-
-            .reservation-btn {
-                width: auto;
-                padding: 0.4rem 0.8rem;
-                font-size: 1rem;
             }
         }
     </style>
