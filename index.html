@@ -38,7 +38,6 @@
             width: 100%;
             height: 100%;
             background-size: cover;
-            background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             -webkit-transform: translate3d(0,0,0);
@@ -48,59 +47,38 @@
         .slide1 {
             z-index: -1;
             background-image: url('images/аrtur.jpg');
+            background-position: center 25%;
             animation: sliding 25s infinite;
         }
 
         .slide2 {
             z-index: -2;
             background-image: url('images/аrtur-hotel.jpg');
+            background-position: center 45%;
             animation: sliding 25s infinite 6s;
         }
 
         .slide4 {
             z-index: -4;
             background-image: url('images/аrtur-vozle.jpg');
+            background-position: center 25%;
             animation: sliding 25s infinite 12s;
         }
 
         .slide5 {
             z-index: -5;
             background-image: url('images/аrtur-zarulem.jpg');
+            background-position: center 37%;
             animation: sliding 25s infinite 18s;
-        }
-
-        /* Мобильное меню */
-        .burger-menu {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-            z-index: 100;
-            position: relative;
-        }
-
-        .burger-menu span {
-            width: 100%;
-            height: 3px;
-            background-color: var(--text-light);
-            transition: all 0.3s ease;
         }
 
         .header {
             background-color: var(--header-dark);
             padding: 1rem;
-            position: relative;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .header-logo {
@@ -118,8 +96,7 @@
             display: flex;
             list-style: none;
             gap: 2rem;
-            margin: 0;
-            padding: 0;
+            flex-wrap: wrap;
         }
 
         .nav-link {
@@ -154,54 +131,201 @@
             transform: translateY(-2px);
         }
 
-        /* Мобильная адаптация */
-        @media (max-width: 768px) {
-            .burger-menu {
-                display: flex;
-            }
+        .main-content {
+            text-align: center;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-            .header-container {
-                flex-wrap: wrap;
+        .contacts {
+            text-align: center;
+            padding: 1rem;
+            color: var(--text-light);
+        }
+
+        .contacts div {
+            font-size: 1.5em;
+        }
+
+        .title {
+            color: #ffcc00;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            margin: 2rem 0;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            word-wrap: break-word;
+        }
+
+        .subtitle {
+            color: #fff700;
+            font-size: 1.5rem;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            word-wrap: break-word;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--text-light);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .services-grid div:nth-last-child(-n+2) {
+            grid-column: span 3;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            background: rgba(30, 39, 97, 0.8);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .service-item h3 {
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-item p {
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .vehicle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .vehicle-card > div {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: rgba(30, 39, 97, 0.8);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vehicle-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin: 0 0 1rem 0;
+        }
+
+        .car-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .car-info h3 {
+            color: var(--gold-accent);
+            font-size: 1.5rem;
+            margin: 0 0 1rem 0;
+            text-align: center;
+        }
+
+        .car-info div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+
+        .car-info p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 0.5rem;
             }
 
             .header-right {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                padding-top: 1rem;
-            }
-
-            .header-right.active {
-                display: flex;
+                gap: 1rem;
             }
 
             .nav-list {
-                flex-direction: column;
-                align-items: center;
                 gap: 1rem;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+                padding: 0.3rem 0;
+            }
+
+            .title {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .vehicle-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .vehicle-card img {
+                height: 180px;
+            }
+
+            .contacts div {
+                word-break: break-word;
+                font-size: 1.5em;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid div:nth-last-child(-n+2) {
+                grid-column: auto;
                 width: 100%;
-            }
-
-            .reservation-btn {
-                width: 100%;
-                margin-top: 1rem;
-            }
-
-            .burger-menu.active span:nth-child(1) {
-                transform: rotate(45deg) translate(6px, 6px);
-            }
-
-            .burger-menu.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .burger-menu.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(6px, -6px);
             }
         }
-
-        [Остальные стили остаются без изменений...]
     </style>
 </head>
 <body>
@@ -211,48 +335,113 @@
     <div class="slide5"></div>
 
     <header class="header">
-        <div class="header-container">
-            <img src="images/logotip.png" alt="VTC Service" class="header-logo">
-            <div class="burger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="header-right">
-                <nav>
-                    <ul class="nav-list">
-                        <li><a href="#" class="nav-link">Accueil</a></li>
-                        <li><a href="#services" class="nav-link">Nos services</a></li>
-                        <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
-                        <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
-                    </ul>
-                </nav>
-                <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
-            </div>
+        <img src="images/logotip.png" alt="VTC Service" class="header-logo">
+        <div class="header-right">
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">Accueil</a></li>
+                    <li><a href="#services" class="nav-link">Nos services</a></li>
+                    <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
+                    <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
+                </ul>
+            </nav>
+            <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
         </div>
     </header>
 
-    [Остальной HTML остается без изменений...]
+    <h2 class="title">Votre chauffeur privé</h2>
+    <p class="subtitle">Transport premium avec chauffeur professionnel</p>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const burgerMenu = document.querySelector('.burger-menu');
-        const headerRight = document.querySelector('.header-right');
-        const navLinks = document.querySelectorAll('.nav-link');
+    <main>
+        <div class="main-content">
+        </div>
 
-        burgerMenu.addEventListener('click', function() {
-            this.classList.toggle('active');
-            headerRight.classList.toggle('active');
-        });
+        <section id="services" class="section">
+            <div class="section-content">
+                <h2>Nos Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>🚗 MISE À DISPOSITION DE CHAUFFEUR PRIVÉ </h3>
+                        <p>La Société ARTIZ SERVICE met à votre disposition un chauffeur dédié pour vos rendez-vous, shopping ou visites touristiques à Paris. Flexibilité et confort garantis.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>🌟 CHAUFFEUR POUR MARIAGE </h3>
+                        <p>Le jour J, faites confiance à la société ARTIZ SERVICE. Location, carburant, coordination : nous gérons tout pour votre tranquillité d'esprit.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>🎨 TRAJETS PONCTUELS VTC</h3>
+                        <p>La société ARTIZ SERVICE assure vos déplacements sur Paris et l'Île-de-France. Un service haut de gamme pour tous vos trajets.</p>
+                    </div>
+                     <div class="service-item">
+                        <h3>🚗 TRANSFERT LONGUE DISTANCE</h3>
+                        <p>La société ARTIZ SERVICE propose ses Berlines et Vans VIP pour l'Europe et les grandes villes françaises (Deauville, Nice, Marseille, Bordeaux, Île de Ré, Mont Saint-Michel)etc.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>🌟 TRANSFERT TOURISTIQUES</h3>
+                        <p>Transferts vers Disneyland Paris, Parc Astérix, Châteaux de Fontainebleau et de Versailles. La société ARTIZ SERVICE, l'excellence à votre service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        // Закрываем меню при клике на ссылку
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                burgerMenu.classList.remove('active');
-                headerRight.classList.remove('active');
-            });
-        });
-    });
-    </script>
+        <section id="vehicle" class="section">
+            <div class="section-content">
+                <h2>Notre Véhicule</h2>
+                <div class="vehicle-grid">
+                    <div class="vehicle-card">
+                        <div>
+                            <img src="images/mercedes-e-class.png" alt="Mercedes E-class" loading="lazy" decoding="async">
+                            <div class="car-info">
+                                <h3>Mercedes E-class</h3>
+                                <div>
+                                    <p>👥 1 à 3 passagers</p>
+                                    <p>🧳 1 à 3 bagages</p>
+                                    <p>⭐ Business Class</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vehicle-card">
+                        <div>
+                            <img src="images/mercedes-s-class.png" alt="Mercedes S-class" loading="lazy" decoding="async">
+                            <div class="car-info">
+                                <h3>Mercedes S-class</h3>
+                                <div>
+                                    <p>👥 1 à 2 passagers</p>
+                                    <p>🧳 1 à 2 bagages</p>
+                                    <p>⭐ Premium Class</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vehicle-card">
+                        <div>
+                            <img src="images/mercedes-v-class.png" alt="Mercedes V-class" loading="lazy" decoding="async">
+                            <div class="car-info">
+                                <h3>Mercedes V-class</h3>
+                                <div>
+                                    <p>👥 1 à 7 passagers</p>
+                                    <p>🧳 1 à 7 bagages</p>
+                                    <p>⭐ Gamme Van</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="section-content">
+                <h2>Contactez-nous</h2>
+                <div class="contacts">
+                    <div>WhatsApp: +33628619912</div>
+                    <div>Email: luxetransfertvtcparis@gmail.com</div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
