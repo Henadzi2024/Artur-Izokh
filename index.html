@@ -273,21 +273,23 @@
         }
 
         @media (max-width: 768px) {
-            .header {
-                padding: 0.5rem;
-            }
+    /* остальные стили оставляем как есть */
 
-            .header-right {
-                gap: 1rem;
-            }
+    .nav-list {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--header-dark);
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px 0;
+    }
 
-            .nav-list {
-                gap: 1rem;
-            }
-
-            .nav-link {
-                font-size: 1rem;
-                padding: 0.3rem 0;
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.3rem 0;
+        white-space: nowrap;
             }
 
             .title {
