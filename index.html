@@ -23,13 +23,13 @@
             overflow-x: hidden;
         }
 
-      @keyframes sliding {
-         0% { opacity: 1; }
-         20% { opacity: 1; }
-         25% { opacity: 0; }
-         95% { opacity: 0; }
-         98% { opacity: 0.5; }
-        100% { opacity: 1; }
+        @keyframes sliding {
+            0% { opacity: 1; }
+            20% { opacity: 1; }
+            25% { opacity: 0; }
+            95% { opacity: 0; }
+            98% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
 
         .slide1, .slide2, .slide4, .slide5 {
@@ -66,11 +66,11 @@
             animation: sliding 25s infinite 12s;
         }
 
-       .slide5 {
-           z-index: -5;  /* возвращаем как было изначально */
-           background-image: url('images/аrtur-zarulem.jpg');
-           background-position: center 37%;
-           animation: sliding 25s infinite 18s;
+        .slide5 {
+            z-index: -5;
+            background-image: url('images/аrtur-zarulem.jpg');
+            background-position: center 37%;
+            animation: sliding 25s infinite 18s;
         }
 
         .header {
@@ -273,37 +273,39 @@
         }
 
         @media (max-width: 768px) {
-   /* Шапка - только логотип и резервасьон */
-   .header {
-       height: 80px;
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-   }
-   
-   /* Кнопка резервасьон справа вверху */
-   .reservation-btn {
-       position: absolute;
-       right: 15px;
-   }
+            .header {
+                position: fixed;
+                width: 100%;
+                z-index: 100;
+                background-color: var(--header-dark);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0.5rem;
+            }
+            
+            .header-right {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
 
-   /* Меню из 4 кнопок в одну линию под шапкой */
-   .nav-list {
-       position: fixed;
-       top: 80px;
-       left: 0;
-       width: 100%;
-       display: flex;
-       justify-content: space-around;
-       background-color: var(--header-dark);
-       padding: 10px 0;
-   }
+            .nav-list {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 0.5rem;
+            }
 
-   /* Отключаем лишние стили */
-   .header-right {
-       display: block;
-    }
-  } 
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 0.3rem;
+                white-space: nowrap;
+            }
+
+            .main-content {
+                padding-top: 100px;
+            }
 
             .title {
                 font-size: 2rem;
@@ -388,7 +390,7 @@
                         <h3>🎨 TRAJETS PONCTUELS VTC</h3>
                         <p>La société ARTIZ SERVICE assure vos déplacements sur Paris et l'Île-de-France. Un service haut de gamme pour tous vos trajets.</p>
                     </div>
-                     <div class="service-item">
+                    <div class="service-item">
                         <h3>🚗 TRANSFERT LONGUE DISTANCE</h3>
                         <p>La société ARTIZ SERVICE propose ses Berlines et Vans VIP pour l'Europe et les grandes villes françaises (Deauville, Nice, Marseille, Bordeaux, Île de Ré, Mont Saint-Michel)etc.</p>
                     </div>
@@ -453,7 +455,7 @@
             <div class="section-content">
                 <h2>Contactez-nous</h2>
                 <div class="contacts">
-                    <div>WhatsApp: +33628619912</div>
+                    <div>WhatsApp: +33628619912
                     <div>Email: luxetransfertvtcparis@gmail.com</div>
                 </div>
             </div>
