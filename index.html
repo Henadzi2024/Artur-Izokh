@@ -148,6 +148,7 @@
 
         .contacts div {
             font-size: 1.5em;
+            margin: 1rem 0;
         }
 
         .title {
@@ -271,78 +272,64 @@
             font-size: 1.1rem;
         }
 
-         @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        padding: 0.5rem;
-    }
+        @media (max-width: 768px) {
+            .slide1, .slide2, .slide4, .slide5 {
+                background-attachment: scroll;
+                background-position: center;
+                height: 100vh;
+                width: 100vw;
+            }
 
-    /* Контейнер для логотипа и кнопки резервации */
-    .header::before {
-        content: "";
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
+            .header {
+                padding: 1rem;
+                position: relative;
+                height: auto;
+                min-height: 80px;
+            }
 
-    .header-logo,
-    .reservation-btn {
-        position: absolute;
-        top: 0.5rem;
-    }
+            .header-logo {
+                position: static;
+                height: 40px;
+                margin-bottom: 1rem;
+            }
 
-    .header-logo {
-        left: 0.5rem;
-        height: 40px;
-    }
+            .header-right {
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+            }
 
-    .reservation-btn {
-        right: 0.5rem;
-    }
+            .nav-list {
+                margin-top: 0;
+                padding: 0.5rem 0;
+                justify-content: center;
+                gap: 1rem;
+            }
 
-    /* Навигационные кнопки */
-    .nav-list {
-        margin-top: 3.5rem;
-        width: 100%;
-        justify-content: center;
-        gap: 1rem;
-    }
+            .nav-link {
+                font-size: 1rem;
+            }
 
-    .nav-link {
-        font-size: 0.9rem;
-    }
-}
-   }
+            .reservation-btn {
+                position: static;
+                margin: 0.5rem 0;
+            }
 
-    @media (max-width: 768px) {
-      .title {
-                font-size: 2rem;
-                padding: 0 1rem;
+            .title {
+                font-size: 2.5rem;
+                padding: 1rem;
+                margin: 1rem 0;
             }
 
             .subtitle {
-                font-size: 1.2rem;
-                padding: 0 1rem;
+                font-size: 1.3rem;
+                padding: 0 1.5rem;
+                margin-bottom: 1rem;
             }
 
             .section {
-                padding: 2rem 1rem;
-            }
-
-            .vehicle-grid {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
-
-            .vehicle-card img {
-                height: 180px;
-            }
-
-            .contacts div {
-                word-break: break-word;
-                font-size: 1.5em;
+                padding: 3rem 1.5rem;
+                min-height: auto;
             }
 
             .services-grid {
@@ -350,8 +337,47 @@
             }
 
             .services-grid div:nth-last-child(-n+2) {
-                grid-column: auto;
                 width: 100%;
+                margin: 0;
+                grid-column: 1;
+            }
+
+            .service-item {
+                padding: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .service-item h3 {
+                font-size: 1.4rem;
+            }
+
+            .service-item p {
+                font-size: 1.1rem;
+                line-height: 1.7;
+            }
+
+            .vehicle-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+
+            .vehicle-card > div {
+                padding: 2rem;
+            }
+
+            .car-info h3 {
+                font-size: 1.8rem;
+            }
+
+            .car-info p {
+                font-size: 1.2rem;
+            }
+
+            .contacts div {
+                font-size: 1.3rem;
+                margin: 1rem 0;
+                padding: 0 1rem;
+                word-break: break-word;
             }
         }
     </style>
@@ -400,7 +426,7 @@
                         <h3>🎨 TRAJETS PONCTUELS VTC</h3>
                         <p>La société ARTIZ SERVICE assure vos déplacements sur Paris et l'Île-de-France. Un service haut de gamme pour tous vos trajets.</p>
                     </div>
-                     <div class="service-item">
+                    <div class="service-item">
                         <h3>🚗 TRANSFERT LONGUE DISTANCE</h3>
                         <p>La société ARTIZ SERVICE propose ses Berlines et Vans VIP pour l'Europe et les grandes villes françaises (Deauville, Nice, Marseille, Bordeaux, Île de Ré, Mont Saint-Michel)etc.</p>
                     </div>
