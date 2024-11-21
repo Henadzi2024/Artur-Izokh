@@ -316,41 +316,60 @@
 }
    }
 
+    @media (max-width: 768px) {
     .title {
-                font-size: 2rem;
-                padding: 0 1rem;
-            }
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
 
-            .subtitle {
-                font-size: 1.2rem;
-                padding: 0 1rem;
-            }
+    /* ВСЕ остальные стили в медиа-запросе остаются КАК БЫЛИ в изначальном коде */
+    .header {
+        padding: 0.5rem;
+    }
 
-            .section {
-                padding: 2rem 1rem;
-            }
+    .header-right {
+        gap: 1rem;
+    }
 
-            .vehicle-grid {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
+    .nav-list {
+        gap: 1rem;
+    }
 
-            .vehicle-card img {
-                height: 180px;
-            }
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.3rem 0;
+    }
 
-            .contacts div {
-                word-break: break-word;
-                font-size: 1.5em;
-            }
+    .section {
+        padding: 2rem 1rem;
+    }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+    .vehicle-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
 
-            .services-grid div:nth-last-child(-n+2) {
-                grid-column: auto;
-                width: 100%;
+    .vehicle-card img {
+        height: 180px;
+    }
+
+    .contacts div {
+        word-break: break-word;
+        font-size: 1.5em;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid div:nth-last-child(-n+2) {
+        grid-column: auto;
+        width: 100%;
+    }
+}
             }
         }
     </style>
