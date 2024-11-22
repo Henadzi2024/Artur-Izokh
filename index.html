@@ -189,48 +189,7 @@
             color: var(--gold-accent);
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            padding: 1rem;
-        }
-
-        .services-grid div:nth-last-child(-n+2) {
-            grid-column: span 3;
-            width: 50%;
-            margin: 0 auto;
-        }
-  
-        .service-item {
-            width: 300px; /* Фиксируем ширину контейнера */
-            height: 300px; /* Фиксируем высоту, чтобы сделать его квадратным */
-            display: flex; /* Для управления содержимым внутри */
-            flex-direction: column; /* Вертикальное расположение элементов */
-            justify-content: space-between; /* Распределение внутреннего содержимого */
-            align-items: center; /* Центрирование текста */
-       }
-   
-        .service-item {
-            background: rgba(30, 39, 97, 0.8);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: left;
-        }
-
-        .service-item h3 {
-            color: var(--gold-accent);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .service-item p {
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        .vehicle-grid {
+       .vehicle-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
@@ -241,9 +200,10 @@
 
         .vehicle-card > div {
             border: 1px solid rgba(255,255,255,0.2);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 10px;
             background: rgba(30, 39, 97, 0.8);
+            height: 450px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -251,13 +211,13 @@
 
         .vehicle-card img {
             width: 100%;
-            height: 200px;
+            height: 260px;
             object-fit: contain;
-            margin: 0 0 1rem 0;
+            margin: 0 0 1.5rem 0;
         }
 
         .car-info {
-            flex: 1;
+            height: 100%;
             display: flex;
             flex-direction: column;
         }
@@ -265,15 +225,14 @@
         .car-info h3 {
             color: var(--gold-accent);
             font-size: 1.5rem;
-            margin: 0 0 1rem 0;
+            margin: 0 0 1.5rem 0;
             text-align: center;
         }
 
         .car-info div {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
-            margin-top: auto;
+            gap: 1rem;
         }
 
         .car-info p {
