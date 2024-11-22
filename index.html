@@ -346,18 +346,13 @@
                 grid-column: 1;
             }
 
-            .service-item {
-                padding: 2rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .service-item h3 {
-                font-size: 1.4rem;
-            }
-
-            .service-item p {
-                font-size: 1.1rem;
-                line-height: 1.7;
+             .service-item {
+        height: auto; /* Возвращаем адаптивную высоту */
+        padding: 1.5rem; /* Устанавливаем комфортные внутренние отступы */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
             }
 
             .vehicle-grid {
