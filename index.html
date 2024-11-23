@@ -190,20 +190,22 @@
         }
 
        /* Секция "Наш сервис" */
-      .services-grid {
-           display: grid;
-           grid-template-columns: repeat(3, 1fr); /* Три колонки в верхнем ряду */
-           grid-template-rows: auto auto; /* Два ряда */
-           gap: 1.5rem; /* Отступы между элементами */
-           justify-content: center; /* Центрируем всю сетку */
-           align-content: center;
-           text-align: center;
+      /* Секция "Наш сервис" */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    grid-template-rows: auto auto; /* Два ряда */
+    gap: 1.5rem; /* Расстояние между элементами */
+    justify-content: center; /* Центрируем всю сетку */
+    text-align: center;
 }
 
-     .services-grid .service-item:nth-child(4), 
-     .services-grid .service-item:nth-child(5) {
-           grid-column: span 1 / span 2; /* Два элемента на второй строке */
-           justify-self: center; /* Центрируем два элемента внизу */
+.services-grid .service-item:nth-child(4),
+.services-grid .service-item:nth-child(5) {
+    grid-column: span 1 / auto; /* Каждый элемент занимает одну колонку */
+    justify-self: center; /* Центрируем квадраты на второй строке */
+}
+
 }
 
         }
