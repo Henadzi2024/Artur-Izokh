@@ -340,28 +340,42 @@
                 grid-template-columns: 1fr;
             }
 
-            .services-grid div:nth-last-child(-n+2) {
-                width: 100%;
-                margin: 0;
-                grid-column: 1;
-            }
+            /* Секция "Наш сервис" */
+    .services-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr); /* Три элемента в первом ряду */
+          gap: 2rem; /* Отступы между элементами */
+}
 
-             .service-item {
-                height: auto; /* Возвращаем адаптивную высоту */
-                padding: 1.5rem; /* Устанавливаем комфортные внутренние отступы */
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                text-align: left;
-            }
+    .services-grid .service-item:nth-last-child(-n+2) {
+         grid-column: span 2; /* Два элемента во втором ряду */
+         justify-self: center; /* Центрируем два квадрата во втором ряду */
+}
 
-            .vehicle-grid {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
+/* Секция "Наш транспорт" */
+   .vehicle-grid {
+         display: flex;
+         justify-content: space-between; /* Элементы распределены по ряду */
+         gap: 2rem;
+}
 
-            .vehicle-card > div {
-                padding: 2rem;
+   .vehicle-card {
+        flex: 1; /* Каждый элемент равномерно распределён */
+        max-width: 300px; /* Ограничиваем ширину */
+        text-align: center;
+        background: rgba(30, 39, 97, 0.8);
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 10px;
+        padding: 1.5rem;
+}
+
+  .vehicle-card img {
+       width: 100%;
+       max-height: 150px;
+       object-fit: contain;
+       margin-bottom: 1rem;
+}
+
             }
 
             .car-info h3 {
