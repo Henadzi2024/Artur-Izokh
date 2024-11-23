@@ -189,17 +189,23 @@
             color: var(--gold-accent);
         }
 
-       .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            padding: 1rem;
-        }
+       /* Секция "Наш сервис" */
+      .services-grid {
+           display: grid;
+           grid-template-columns: repeat(3, 1fr); /* Три колонки в верхнем ряду */
+           grid-template-rows: auto auto; /* Два ряда */
+           gap: 1.5rem; /* Отступы между элементами */
+           justify-content: center; /* Центрируем всю сетку */
+           align-content: center;
+           text-align: center;
+}
 
-        .services-grid div:nth-last-child(-n+2) {
-            grid-column: span 3;
-            width: 50%;
-            margin: 0 auto;
+     .services-grid .service-item:nth-child(4), 
+     .services-grid .service-item:nth-child(5) {
+           grid-column: span 1 / span 2; /* Два элемента на второй строке */
+           justify-self: center; /* Центрируем два элемента внизу */
+}
+
         }
 
         .service-item {
