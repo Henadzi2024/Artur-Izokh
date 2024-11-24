@@ -34,7 +34,7 @@
         }
 
         .service-item {
-            width: 100%; /* Для мобильных устройств */
+            width: calc(100% - 40px); /* Для мобильных устройств */
             max-width: 300px; /* Максимальная ширина */
             min-width: 200px; /* Минимальная ширина */
             background: rgba(30, 39, 97, 0.8);
@@ -44,8 +44,8 @@
             height: 150px;
             text-align: center;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* Центрируем содержимое */
+            align-items: center; /* Вертикальное выравнивание */
         }
 
         @media (min-width: 768px) {
@@ -77,7 +77,7 @@
         }
 
         .vehicle-card {
-            width: 100%; /* Для мобильных устройств */
+            width: calc(100% - 40px); /* Для мобильных устройств */
             max-width: 300px;
             text-align: center;
             background: rgba(30, 39, 97, 0.8);
@@ -118,19 +118,19 @@
         <h2>Наш Транспорт</h2>
         <div class="vehicle-grid">
             <div class="vehicle-card">
-                <img src="images/car1.png" alt="Авто 1">
+                <img src="https://via.placeholder.com/300x150" alt="Авто 1">
                 <h3>Mercedes E-class</h3>
                 <p>👥 1–3 пассажира</p>
                 <p>🧳 2–3 багажа</p>
             </div>
             <div class="vehicle-card">
-                <img src="images/car2.png" alt="Авто 2">
+                <img src="https://via.placeholder.com/300x150" alt="Авто 2">
                 <h3>Mercedes S-class</h3>
                 <p>👥 1–2 пассажира</p>
                 <p>🧳 1–2 багажа</p>
             </div>
             <div class="vehicle-card">
-                <img src="images/car3.png" alt="Авто 3">
+                <img src="https://via.placeholder.com/300x150" alt="Авто 3">
                 <h3>Mercedes V-class</h3>
                 <p>👥 1–7 пассажиров</p>
                 <p>🧳 5–7 багажа</p>
@@ -141,7 +141,7 @@
                 </div>
             </div>
         </section>
-
+    
         <section id="contact" class="section">
             <div class="section-content">
                 <h2>Contactez-nous</h2>
