@@ -1,499 +1,152 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VTC Service - Transport Premium</title>
+    <title>Наш Сервис и Транспорт</title>
     <style>
-        :root {
-            --text-light: #ffffff;
-            --header-dark: #1e2761;
-            --gold-accent: #d4af37;
-        }
-
-        * {
+        /* Базовые стили (Mobile-First) */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-
-        @keyframes sliding {
-            0% { opacity: 1; }
-            20% { opacity: 1; }
-            25% { opacity: 0; }
-            95% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .slide1, .slide2, .slide4, .slide5 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-        }
-
-        .slide1 {
-            z-index: -1;
-            background-image: url('images/аrtur.jpg');
-            background-position: center 25%;
-            animation: sliding 25s infinite;
-        }
-
-        .slide2 {
-            z-index: -2;
-            background-image: url('images/аrtur-hotel.jpg');
-            background-position: center 45%;
-            animation: sliding 25s infinite 6s;
-        }
-
-        .slide4 {
-            z-index: -4;
-            background-image: url('images/аrtur-vozle.jpg');
-            background-position: center 25%;
-            animation: sliding 25s infinite 12s;
-        }
-
-        .slide5 {
-            z-index: -5;
-            background-image: url('images/аrtur-zarulem.jpg');
-            background-position: center 37%;
-            animation: sliding 25s infinite 18s;
-        }
-
-        .header {
-            background-color: var(--header-dark);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .header-logo {
-            height: 50px;
-            width: auto;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .nav-list {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .nav-link {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 0.5rem 0;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--gold-accent);
-        }
-
-        .reservation-btn {
-            display: inline-block;
-            background-color: var(--gold-accent);
-            color: var(--text-light);
-            text-align: center;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .reservation-btn:hover {
-            background-color: #b69530;
-            transform: translateY(-2px);
-        }
-
-        .main-content {
-            text-align: center;
-            padding: 2rem 1rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .contacts {
-            text-align: center;
-            padding: 1rem;
-            color: var(--text-light);
-        }
-
-        .contacts div {
-            font-size: 1.5em;
-            margin: 1rem 0;
-        }
-
-        .title {
-            color: #ffcc00;
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            margin: 2rem 0;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            word-wrap: break-word;
-        }
-
-        .subtitle {
-            color: #fff700;
-            font-size: 1.5rem;
-            text-align: center;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-            word-wrap: break-word;
+            background-color: #1e2761;
+            color: #fff;
         }
 
         .section {
-            min-height: 100vh;
-            padding: 4rem 2rem;
-            background: rgba(0, 0, 0, 0.7);
-            position: relative;
+            padding: 20px;
         }
 
-        .section-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            color: var(--text-light);
-        }
-
-        .section h2 {
+        h2 {
             text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            color: var(--gold-accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #d4af37;
         }
 
-       .services-grid {
+        /* Сетка для сервисов */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            padding: 1rem;
-        }
-
-        .services-grid div:nth-last-child(-n+2) {
-            grid-column: span 3;
-            width: 50%;
-            margin: 0 auto;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .service-item {
             background: rgba(30, 39, 97, 0.8);
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            padding: 1.5rem;
-            text-align: left;
+            padding: 20px;
+            text-align: center;
         }
 
-        .service-item h3 {
-            color: var(--gold-accent);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .service-item p {
-            line-height: 1.6;
-            margin: 0;
-        }
-
+        /* Сетка для транспорта */
         .vehicle-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
-        .vehicle-card > div {
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 1.5rem;
-            border-radius: 10px;
+        .vehicle-card {
             background: rgba(30, 39, 97, 0.8);
-            width: 100%;
-            display: flex;
-            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
         }
 
         .vehicle-card img {
             width: 100%;
-            height: 200px;
+            max-height: 150px;
             object-fit: contain;
-            margin: 0 0 1rem 0;
+            margin-bottom: 15px;
         }
 
-        .car-info {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .car-info h3 {
-            color: var(--gold-accent);
-            font-size: 1.5rem;
-            margin: 0 0 1rem 0;
-            text-align: center;
-        }
-
-        .car-info div {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            margin-top: auto;
-        }
-
-        .car-info p {
-            margin: 0;
-            font-size: 1.1rem;
-        }
-
-        @media (max-width: 768px) {
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem 1rem;
-    }
-
-    .header-logo {
-        height: 40px;
-        flex-shrink: 0; /* Логотип не сжимается */
-    }
-
-    .reservation-btn {
-        font-size: 0.9rem; /* Уменьшенный размер для мобильной версии */
-        padding: 0.4rem 0.8rem; /* Подходящий размер для небольших экранов */
-        flex-shrink: 0; /* Кнопка не сжимается */
-    }
-
-    .header-right {
-        flex-direction: column; /* Меню переносится ниже */
-        gap: 1rem;
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .nav-list {
-        justify-content: center;
-        gap: 1rem;
-    }
-
-            .nav-link {
-                font-size: 1rem;
-            }
-
-            .reservation-btn {
-                position: static;
-                margin: 0.5rem 0;
-            }
-
-            @media (max-width: 768px) {
-    .title {
-        font-size: 1.8rem; /* Уменьшение размера текста */
-        margin: 0; /* Убираем лишние отступы */
-        text-align: left; /* Выравниваем текст по левому краю */
-        position: relative; /* Для контроля положения */
-        top: 0; /* Поднимаем текст ближе к шапке */
-        padding: 1rem 1rem 0 1rem; /* Добавляем внутренние отступы */
-    }
-
-    .subtitle {
-        font-size: 1.2rem; /* Уменьшение размера подзаголовка */
-        margin: 0.5rem 1rem 0 1rem; /* Корректируем отступы */
-        text-align: center;
-    }
-}
-
-            }
-
-            .section {
-                padding: 3rem 1.5rem;
-                min-height: auto;
-            }
-
+        /* Медиазапросы для десктопов */
+        @media (min-width: 768px) {
             .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid div:nth-last-child(-n+2) {
-                width: 100%;
-                margin: 0;
-                grid-column: 1;
-            }
-
-             .service-item {
-                height: auto; /* Возвращаем адаптивную высоту */
-                padding: 1.5rem; /* Устанавливаем комфортные внутренние отступы */
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                text-align: left;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
             .vehicle-grid {
-                grid-template-columns: 1fr;
-                padding: 1rem;
+                grid-template-columns: repeat(3, 1fr);
             }
+        }
 
-            .vehicle-card > div {
-                padding: 2rem;
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
+        }
 
-            .car-info h3 {
-                font-size: 1.8rem;
-            }
+        /* Контакты */
+        .contacts {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-            .car-info p {
-                font-size: 1.2rem;
-            }
+        .contacts div {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
 
-            .contacts div {
-                font-size: 1.3rem;
-                margin: 1rem 0;
-                padding: 0 1rem;
-                word-break: break-word;
-            }
+        .contacts a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contacts a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="slide1"></div>
-    <div class="slide2"></div>
-    <div class="slide4"></div>
-    <div class="slide5"></div>
-
-    <header class="header">
-        <img src="images/logotip.png" alt="VTC Service" class="header-logo">
-         <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
-        <div class="header-right">
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#services" class="nav-link">Nos services</a></li>
-                    <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
-                    <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
-                </ul>
-            </nav>
+    <!-- Секция "Наш сервис" -->
+    <section id="services" class="section">
+        <h2>Наш Сервис</h2>
+        <div class="services-grid">
+            <div class="service-item">Сервис 1</div>
+            <div class="service-item">Сервис 2</div>
+            <div class="service-item">Сервис 3</div>
+            <div class="service-item">Сервис 4</div>
+            <div class="service-item">Сервис 5</div>
         </div>
-    </header>
+    </section>
 
-    <h2 class="title">Votre chauffeur privé</h2>
-    <p class="subtitle">Transport premium avec chauffeur professionnel</p>
-
-    <main>
-        <div class="main-content">
+    <!-- Секция "Наш транспорт" -->
+    <section id="vehicle" class="section">
+        <h2>Наш Транспорт</h2>
+        <div class="vehicle-grid">
+            <div class="vehicle-card">
+                <img src="https://via.placeholder.com/300x150" alt="Авто 1">
+                <h3>Mercedes E-class</h3>
+                <p>👥 1–3 пассажира</p>
+                <p>🧳 2–3 багажа</p>
+            </div>
+            <div class="vehicle-card">
+                <img src="https://via.placeholder.com/300x150" alt="Авто 2">
+                <h3>Mercedes S-class</h3>
+                <p>👥 1–2 пассажира</p>
+                <p>🧳 1–2 багажа</p>
+            </div>
+            <div class="vehicle-card">
+                <img src="https://via.placeholder.com/300x150" alt="Авто 3">
+                <h3>Mercedes V-class</h3>
+                <p>👥 1–7 пассажиров</p>
+                <p>🧳 5–7 багажа</p>
+            </div>
         </div>
+    </section>
 
-        <section id="services" class="section">
-            <div class="section-content">
-                <h2>Nos Services</h2>
-                <div class="services-grid">
-                    <div class="service-item">
-                        <h3>🚗 MISE À DISPOSITION DE CHAUFFEUR PRIVÉ </h3>
-                        <p>La Société ARTIZ SERVICE met à votre disposition un chauffeur dédié pour vos rendez-vous, shopping ou visites touristiques à Paris. Flexibilité et confort garantis.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>🌟 CHAUFFEUR POUR MARIAGE </h3>
-                        <p>Le jour J, faites confiance à la société ARTIZ SERVICE. Location, carburant, coordination : nous gérons tout pour votre tranquillité d'esprit.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>🎨 TRAJETS PONCTUELS VTC</h3>
-                        <p>La société ARTIZ SERVICE assure vos déplacements sur Paris et l'Île-de-France. Un service haut de gamme pour tous vos trajets.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>🚗 TRANSFERT LONGUE DISTANCE</h3>
-                        <p>La société ARTIZ SERVICE propose ses Berlines et Vans VIP pour l'Europe et les grandes villes françaises (Deauville, Nice, Marseille, Bordeaux, Île de Ré, Mont Saint-Michel)etc.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>🌟 TRANSFERT TOURISTIQUES</h3>
-                        <p>Transferts vers Disneyland Paris, Parc Astérix, Châteaux de Fontainebleau et de Versailles. La société ARTIZ SERVICE, l'excellence à votre service.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="vehicle" class="section">
-            <div class="section-content">
-                <h2>Notre Véhicule</h2>
-                <div class="vehicle-grid">
-                    <div class="vehicle-card">
-                        <div>
-                            <img src="images/mercedes-e-class.png" alt="Mercedes E-class" loading="lazy" decoding="async">
-                            <div class="car-info">
-                                <h3>Mercedes E-class</h3>
-                                <div>
-                                    <p>👥 1 à 3 passagers</p>
-                                    <p>🧳 1 à 3 bagages</p>
-                                    <p>⭐ Business Class</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="vehicle-card">
-                        <div>
-                            <img src="images/mercedes-s-class.png" alt="Mercedes S-class" loading="lazy" decoding="async">
-                            <div class="car-info">
-                                <h3>Mercedes S-class</h3>
-                                <div>
-                                    <p>👥 1 à 2 passagers</p>
-                                    <p>🧳 1 à 2 bagages</p>
-                                    <p>⭐ Premium Class</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="vehicle-card">
-                        <div>
-                            <img src="images/mercedes-v-class.png" alt="Mercedes V-class" loading="lazy" decoding="async">
-                            <div class="car-info">
-                                <h3>Mercedes V-class</h3>
-                                <div>
-                                    <p>👥 1 à 7 passagers</p>
-                                    <p>🧳 1 à 7 bagages</p>
-                                    <p>⭐ Gamme Van</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="section-content">
-                <h2>Contactez-nous</h2>
-                <div class="contacts">
-                    <div>WhatsApp: +33628619912</div>
-                    <div>Email: luxetransfertvtcparis@gmail.com</div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Секция "Контакты" -->
+    <section id="contact" class="section">
+        <h2>Контакты</h2>
+        <div class="contacts">
+            <div>WhatsApp: <a href="tel:+33628619912">+33 6 28 61 99 12</a></div>
+            <div>Email: <a href="mailto:luxetransfertvtcparis@gmail.com">luxetransfertvtcparis@gmail.com</a></div>
+        </div>
+    </section>
 </body>
-</html>     
+</html>
