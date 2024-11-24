@@ -29,17 +29,17 @@
            99%, 100% { opacity: 1; }
         }
 
-        .slide1, .slide2, .slide4, .slide5 {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
+        .slide1, .slide2, .slide4, .slide5, .slide6 {
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background-size: cover;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           -webkit-transform: translate3d(0,0,0);
+           transform: translate3d(0,0,0);
         }
 
         .slide1 {
@@ -69,7 +69,14 @@
             background-position: center 37%;
             animation: sliding 25s infinite 18s;
         }
-
+         .slide6 {
+            z-index: -6;
+            background-image: url('images/logo.jpg');
+            background-size: contain; /* Показать логотип крупным планом */
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: sliding 25s infinite 23.5s; /* Начать в конце цикла */
+             
         .header {
             background-color: var(--header-dark);
             padding: 1rem;
