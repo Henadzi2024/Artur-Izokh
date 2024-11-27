@@ -3,29 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Service de transport VTC premium avec chauffeur professionnel à Paris">
-    
-    <meta property="og:title" content="VTC Service - Transport Premium Paris">
-    <meta property="og:description" content="Service de transport VTC premium avec chauffeur professionnel à Paris">
-    <meta property="og:image" content="https://vtc-service.fr/images/og-image.jpg">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vtc-service.fr">
-    
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preload" href="/images/logotip.webp" as="image">
-    <link rel="preload" href="/images/slide1.webp" as="image">
-    
-    <title>VTC Service - Transport Premium Paris | ARTIZ SERVICE</title>
-
+    <title>VTC Service - Transport Premium</title>
     <style>
         :root {
             --text-light: #ffffff;
             --header-dark: #1e2761;
             --gold-accent: #d4af37;
-            --gold-hover: #c19b2f;
-            --header-bg: rgba(30, 39, 97, 0.95);
-            --card-bg: rgba(30, 39, 97, 0.9);
-            --section-bg: rgba(0, 0, 0, 0.8);
         }
 
         * {
@@ -36,36 +19,92 @@
 
         body {
             min-height: 100vh;
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
             overflow-x: hidden;
-            color: var(--text-light);
+        }
+
+        @keyframes sliding {
+            0% { opacity: 1; }
+            20% { opacity: 1; }
+            25% { opacity: 0; }
+            95% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .slide1, .slide2, .slide4, .slide5 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+
+        .slide1 {
+            z-index: -1;
+            background-image: url('images/аrtur.jpg');
+            background-position: center 25%;
+            animation: sliding 25s infinite;
+        }
+
+        .slide2 {
+            z-index: -2;
+            background-image: url('images/аrtur-hotel.jpg');
+            background-position: center 45%;
+            animation: sliding 25s infinite 6s;
+        }
+
+        .slide4 {
+            z-index: -4;
+            background-image: url('images/аrtur-vozle.jpg');
+            background-position: center 25%;
+            animation: sliding 25s infinite 12s;
+        }
+
+        .slide5 {
+            z-index: -5;
+            background-image: url('images/аrtur-zarulem.jpg');
+            background-position: center 37%;
+            animation: sliding 25s infinite 18s;
         }
 
         .header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: var(--header-bg);
+            background-color: var(--header-dark);
             padding: 1rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+        }
+
+        .header-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .nav-list {
-            transition: transform 0.3s ease-in-out;
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            display: block;
             transition: color 0.3s ease;
         }
 
@@ -73,384 +112,388 @@
             color: var(--gold-accent);
         }
 
-        .slideshow {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 100vh;
+        .reservation-btn {
+            display: inline-block;
+            background-color: var(--gold-accent);
+            color: var(--text-light);
+            text-align: center;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            z-index: 1;
+        .reservation-btn:hover {
+            background-color: #b69530;
+            transform: translateY(-2px);
         }
 
-        .slide.active {
-            opacity: 1;
-            z-index: 2;
+        .main-content {
+            text-align: center;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .services-grid {
-            display: grid;
-            gap: 2rem;
+        .contacts {
+            text-align: center;
+            padding: 1rem;
+            color: var(--text-light);
+        }
+
+        .contacts div {
+            font-size: 1.5em;
+            margin: 1rem 0;
+        }
+
+        .title {
+            color: #ffcc00;
+            font-size: 3.5rem;
+            text-transform: uppercase;
             margin: 2rem 0;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            word-wrap: break-word;
+        }
+
+        .subtitle {
+            color: #fff700;
+            font-size: 1.5rem;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            word-wrap: break-word;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            background: rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--text-light);
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+        }
+
+       .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .services-grid div:nth-last-child(-n+2) {
+            grid-column: span 3;
+            width: 50%;
+            margin: 0 auto;
         }
 
         .service-item {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 8px;
+            background: rgba(30, 39, 97, 0.8);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: left;
         }
 
-        @media (min-width: 1024px) {
-            .services-grid {
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-areas: 
-                    "s1 s2 s3"
-                    "s4 s5 .";
-                gap: 2rem;
+        .service-item h3 {
+            color: var(--gold-accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-item p {
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .vehicle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .vehicle-card > div {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: rgba(30, 39, 97, 0.8);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vehicle-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin: 0 0 1rem 0;
+        }
+
+        .car-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .car-info h3 {
+            color: var(--gold-accent);
+            font-size: 1.5rem;
+            margin: 0 0 1rem 0;
+            text-align: center;
+        }
+
+        .car-info div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+
+        .car-info p {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+    }
+
+    .header-logo {
+        height: 40px;
+        flex-shrink: 0; /* Логотип не сжимается */
+    }
+
+    .reservation-btn {
+        font-size: 0.9rem; /* Уменьшенный размер для мобильной версии */
+        padding: 0.4rem 0.8rem; /* Подходящий размер для небольших экранов */
+        flex-shrink: 0; /* Кнопка не сжимается */
+    }
+
+    .header-right {
+        flex-direction: column; /* Меню переносится ниже */
+        gap: 1rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .nav-list {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+            .nav-link {
+                font-size: 1rem;
             }
 
-            .service-item {
-                aspect-ratio: 1 / 1;
+            .reservation-btn {
+                position: static;
+                margin: 0.5rem 0;
+            }
+
+            @media (max-width: 768px) {
+    .title {
+        font-size: 1.8rem; /* Уменьшение размера текста */
+        margin: 0; /* Убираем лишние отступы */
+        text-align: left; /* Выравниваем текст по левому краю */
+        position: relative; /* Для контроля положения */
+        top: 0; /* Поднимаем текст ближе к шапке */
+        padding: 1rem 1rem 0 1rem; /* Добавляем внутренние отступы */
+    }
+
+    .subtitle {
+        font-size: 1.2rem; /* Уменьшение размера подзаголовка */
+        margin: 0.5rem 1rem 0 1rem; /* Корректируем отступы */
+        text-align: center;
+    }
+}
+
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+                min-height: auto;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid div:nth-last-child(-n+2) {
+                width: 100%;
+                margin: 0;
+                grid-column: 1;
+            }
+
+             .service-item {
+                height: auto; /* Возвращаем адаптивную высоту */
+                padding: 1.5rem; /* Устанавливаем комфортные внутренние отступы */
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
-                padding: 2rem;
-                margin: 0;
+                justify-content: space-between;
+                text-align: left;
             }
 
-            .service-item:nth-child(1) { grid-area: s1; }
-            .service-item:nth-child(2) { grid-area: s2; }
-            .service-item:nth-child(3) { grid-area: s3; }
-            .service-item:nth-child(4) { grid-area: s4; }
-            .service-item:nth-child(5) { grid-area: s5; }
-            
             .vehicle-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+                grid-template-columns: 1fr;
+                padding: 1rem;
             }
 
-            .vehicle-card {
-                aspect-ratio: 1 / 1;
-                background: var(--card-bg);
+            .vehicle-card > div {
                 padding: 2rem;
-                border-radius: 8px;
+            }
+
+            .car-info h3 {
+                font-size: 1.8rem;
+            }
+
+            .car-info p {
+                font-size: 1.2rem;
+            }
+
+            .contacts div {
+                font-size: 1.3rem;
+                margin: 1rem 0;
+                padding: 0 1rem;
+                word-break: break-word;
             }
         }
     </style>
 </head>
 <body>
-    <a href="#main" class="skip-link">Passer au contenu principal</a>
+    <div class="slide1"></div>
+    <div class="slide2"></div>
+    <div class="slide4"></div>
+    <div class="slide5"></div>
 
-    <header class="header" role="banner">
-        <div class="header-container">
-            <a href="/" class="logo">
-                <img src="/images/logotip.webp" alt="VTC Service Logo" width="150" height="50">
-            </a>
-            
-            <button class="mobile-menu-btn" 
-                    aria-label="Menu" 
-                    aria-expanded="false"
-                    aria-controls="main-navigation">
-                <span class="menu-icon"></span>
-            </button>
-
-            <nav id="main-navigation" role="navigation" aria-label="Navigation principale">
-                <ul class="nav-list" role="menubar">
-                    <li role="none">
-                        <a href="#services" class="nav-link" role="menuitem">Nos services</a>
-                    </li>
-                    <li role="none">
-                        <a href="#vehicle" class="nav-link" role="menuitem">Notre véhicule</a>
-                    </li>
-                    <li role="none">
-                        <a href="#contact" class="nav-link" role="menuitem">Contactez-nous</a>
-                    </li>
+    <header class="header">
+        <img src="images/logotip.png" alt="VTC Service" class="header-logo">
+         <a href="tel:+33628619912" class="reservation-btn">Réserver maintenant</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#services" class="nav-link">Nos services</a></li>
+                    <li><a href="#vehicle" class="nav-link">Notre véhicule</a></li>
+                    <li><a href="#contact" class="nav-link">Contactez-nous</a></li>
                 </ul>
             </nav>
-
-            <a href="tel:+33628619912" 
-               class="reservation-btn" 
-               role="button"
-               aria-label="Réserver maintenant - Appeler +33628619912">
-                Réserver maintenant
-                <span class="sr-only">Appeler pour réserver</span>
-            </a>
         </div>
     </header>
 
-    <div class="slideshow" 
-         role="region" 
-         aria-label="Galerie de photos"
-         tabindex="0">
-        <picture class="slide">
-            <source srcset="/images/slide1.webp" type="image/webp">
-            <source srcset="/images/slide1.jpg" type="image/jpeg">
-            <img src="/images/slide1.jpg" 
-                 alt="Vue de notre service VTC premium" 
-                 loading="lazy"
-                 width="1920"
-                 height="1080">
-        </picture>
-        <picture class="slide">
-            <source srcset="/images/slide2.webp" type="image/webp">
-            <source srcset="/images/slide2.jpg" type="image/jpeg">
-            <img src="/images/slide2.jpg" 
-                 alt="Notre flotte de véhicules premium"
-                 loading="lazy"
-                 width="1920"
-                 height="1080">
-        </picture>
-        <picture class="slide">
-            <source srcset="/images/slide4.webp" type="image/webp">
-            <source srcset="/images/slide4.jpg" type="image/jpeg">
-            <img src="/images/slide4.jpg" 
-                 alt="Service de transport luxueux"
-                 loading="lazy"
-                 width="1920"
-                 height="1080">
-        </picture>
+    <h2 class="title">Votre chauffeur privé</h2>
+    <p class="subtitle">Transport premium avec chauffeur professionnel</p>
 
-        <button class="slide-nav prev" aria-label="Image précédente">&#10094;</button>
-        <button class="slide-nav next" aria-label="Image suivante">&#10095;</button>
-        
-        <div class="slide-indicators" role="tablist">
-            <button role="tab" aria-label="Image 1" aria-selected="true"></button>
-            <button role="tab" aria-label="Image 2" aria-selected="false"></button>
-            <button role="tab" aria-label="Image 3" aria-selected="false"></button>
+    <main>
+        <div class="main-content">
         </div>
-    </div>
 
-    <main id="main" role="main">
-        <section class="hero-section" role="region" aria-label="Introduction">
-            <div class="hero-content">
-                <h1>Votre chauffeur privé</h1>
-                <p>Transport premium avec chauffeur professionnel</p>
-            </div>
-        </section>
-
-        <section id="services" class="section" role="region" aria-label="Nos services">
+        <section id="services" class="section">
             <div class="section-content">
                 <h2>Nos Services</h2>
                 <div class="services-grid">
-                    <article class="service-item">
-                        <h3>
-                            <span aria-hidden="true">🚗</span>
-                            MISE À DISPOSITION DE CHAUFFEUR PRIVÉ
-                        </h3>
+                    <div class="service-item">
+                        <h3>🚗 MISE À DISPOSITION DE CHAUFFEUR PRIVÉ </h3>
                         <p>La Société ARTIZ SERVICE met à votre disposition un chauffeur dédié pour vos rendez-vous, shopping ou visites touristiques à Paris. Flexibilité et confort garantis.</p>
-                    </article>
-                    <article class="service-item">
-                        <h3>
-                            <span aria-hidden="true">🌟</span>
-                            CHAUFFEUR POUR MARIAGE
-                        </h3>
+                    </div>
+                    <div class="service-item">
+                        <h3>🌟 CHAUFFEUR POUR MARIAGE </h3>
                         <p>Le jour J, faites confiance à la société ARTIZ SERVICE. Location, carburant, coordination : nous gérons tout pour votre tranquillité d'esprit.</p>
-                    </article>
-                    <article class="service-item">
-                        <h3>
-                            <span aria-hidden="true">🎨</span>
-                            TRAJETS PONCTUELS VTC
-                        </h3>
+                    </div>
+                    <div class="service-item">
+                        <h3>🎨 TRAJETS PONCTUELS VTC</h3>
                         <p>La société ARTIZ SERVICE assure vos déplacements sur Paris et l'Île-de-France. Un service haut de gamme pour tous vos trajets.</p>
-                    </article>
-                    <article class="service-item">
-                        <h3>
-                            <span aria-hidden="true">🚗</span>
-                            TRANSFERT LONGUE DISTANCE
-                        </h3>
-                        <p>La société ARTIZ SERVICE propose ses Berlines et Vans VIP pour l'Europe et les grandes villes françaises.</p>
-                    </article>
+                    </div>
+                    <div class="service-item">
+                        <h3>🚗 TRANSFERT LONGUE DISTANCE</h3>
+                        <p>La société ARTIZ SERVICE propose ses Berlines et Vans VIP pour l'Europe et les grandes villes françaises (Deauville, Nice, Marseille, Bordeaux, Île de Ré, Mont Saint-Michel)etc.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>🌟 TRANSFERT TOURISTIQUES</h3>
+                        <p>Transferts vers Disneyland Paris, Parc Astérix, Châteaux de Fontainebleau et de Versailles. La société ARTIZ SERVICE, l'excellence à votre service.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="vehicle" class="section" role="region" aria-label="Notre véhicule">
+        <section id="vehicle" class="section">
             <div class="section-content">
                 <h2>Notre Véhicule</h2>
                 <div class="vehicle-grid">
-                    <article class="vehicle-card">
-                        <picture>
-                            <source srcset="/images/mercedes-e-class.webp" type="image/webp">
-                            <source srcset="/images/mercedes-e-class.png" type="image/png">
-                            <img src="/images/mercedes-e-class.png"
-                                 alt="Mercedes E-class"
-                                 loading="lazy"
-                                 class="vehicle-image"
-                                 width="300"
-                                 height="200">
-                        </picture>
-                        <div class="car-info">
-                            <h3>Mercedes E-class</h3>
-                            <div class="car-details">
-                                <p class="car-detail">👥 1 à 3 passagers</p>
-                                <p class="car-detail">🧳 1 à 3 bagages</p>
-                                <p class="car-detail">⭐ Business Class</p>
+                    <div class="vehicle-card">
+                        <div>
+                            <img src="images/mercedes-e-class.png" alt="Mercedes E-class" loading="lazy" decoding="async">
+                            <div class="car-info">
+                                <h3>Mercedes E-class</h3>
+                                <div>
+                                    <p>👥 1 à 3 passagers</p>
+                                    <p>🧳 1 à 3 bagages</p>
+                                    <p>⭐ Business Class</p>
+                                </div>
                             </div>
                         </div>
-                    </article>
-                    
-                    <article class="vehicle-card">
-                        <picture>
-                            <source srcset="/images/mercedes-s-class.webp" type="image/webp">
-                            <source srcset="/images/mercedes-s-class.png" type="image/png">
-                            <img src="/images/mercedes-s-class.png"
-                                 alt="Mercedes S-class"
-                                 loading="lazy"
-                                 class="vehicle-image"
-                                 width="300"
-                                 height="200">
-                        </picture>
-                        <div class="car-info">
-                            <h3>Mercedes S-class</h3>
-                            <div class="car-details">
-                                <p class="car-detail">👥 1 à 2 passagers</p>
-                                <p class="car-detail">🧳 1 à 2 bagages</p>
-                                <p class="car-detail">⭐ Premium Class</p>
+                    </div>
+
+                    <div class="vehicle-card">
+                        <div>
+                            <img src="images/mercedes-s-class.png" alt="Mercedes S-class" loading="lazy" decoding="async">
+                            <div class="car-info">
+                                <h3>Mercedes S-class</h3>
+                                <div>
+                                    <p>👥 1 à 2 passagers</p>
+                                    <p>🧳 1 à 2 bagages</p>
+                                    <p>⭐ Premium Class</p>
+                                </div>
                             </div>
                         </div>
-                    </article>
+                    </div>
+
+                    <div class="vehicle-card">
+                        <div>
+                            <img src="images/mercedes-v-class.png" alt="Mercedes V-class" loading="lazy" decoding="async">
+                            <div class="car-info">
+                                <h3>Mercedes V-class</h3>
+                                <div>
+                                    <p>👥 1 à 7 passagers</p>
+                                    <p>🧳 1 à 7 bagages</p>
+                                    <p>⭐ Gamme Van</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section" role="region" aria-label="Contactez-nous">
+        <section id="contact" class="section">
             <div class="section-content">
                 <h2>Contactez-nous</h2>
                 <div class="contacts">
-                    <div class="contact-item">
-                        <a href="https://wa.me/33628619912" target="_blank" rel="noopener">
-                            WhatsApp: +33628619912
-                        </a>
-                    </div>
-                    <div class="contact-item">
-                        <a href="mailto:luxetransfertvtcparis@gmail.com">
-                            Email: luxetransfertvtcparis@gmail.com
-                        </a>
-                    </div>
+                    <div>WhatsApp: +33628619912</div>
+                    <div>Email: luxetransfertvtcparis@gmail.com</div>
                 </div>
             </div>
         </section>
     </main>
-
-    <footer role="contentinfo">
-        <div class="footer-content">
-            <p>&copy; 2024 ARTIZ SERVICE. Tous droits réservés.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            const nav = document.querySelector('.nav-list');
-            
-            menuBtn.addEventListener('click', () => {
-                const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-                menuBtn.setAttribute('aria-expanded', !isExpanded);
-                nav.classList.toggle('active');
-                document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
-            });
-
-            const slideshow = document.querySelector('.slideshow');
-            const slides = document.querySelectorAll('.slide');
-            const indicators = document.querySelectorAll('.slide-indicators button');
-            const prevBtn = document.querySelector('.slide-nav.prev');
-            const nextBtn = document.querySelector('.slide-nav.next');
-            let currentSlide = 0;
-            let isTransitioning = false;
-            let slideInterval;
-
-            function showSlide(index) {
-                if (isTransitioning) return;
-                isTransitioning = true;
-
-                slides[index].style.zIndex = '2';
-                slides[currentSlide].style.zIndex = '1';
-                
-                indicators.forEach(ind => ind.setAttribute('aria-selected', 'false'));
-                indicators[index].setAttribute('aria-selected', 'true');
-
-                requestAnimationFrame(() => {
-                    slides[index].classList.add('active');
-                    slides[index].setAttribute('aria-hidden', 'false');
-                    
-                    setTimeout(() => {
-                        slides[currentSlide].classList.remove('active');
-                        slides[currentSlide].setAttribute('aria-hidden', 'true');
-                        currentSlide = index;
-                        isTransitioning = false;
-                    }, 50);
-                });
-            }
-
-            function nextSlide() {
-                if (!isTransitioning) {
-                    const next = (currentSlide + 1) % slides.length;
-                    showSlide(next);
-                }
-            }
-
-            function prevSlide() {
-                if (!isTransitioning) {
-                    const prev = (currentSlide - 1 + slides.length) % slides.length;
-                    showSlide(prev);
-                }
-            }
-
-            prevBtn?.addEventListener('click', () => {
-                clearInterval(slideInterval);
-                prevSlide();
-                startSlideshow();
-            });
-
-            nextBtn?.addEventListener('click', () => {
-                clearInterval(slideInterval);
-                nextSlide();
-                startSlideshow();
-            });
-
-            slideshow?.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') {
-                    clearInterval(slideInterval);
-                    prevSlide();
-                    startSlideshow();
-                } else if (e.key === 'ArrowRight') {
-                    clearInterval(slideInterval);
-                    nextSlide();
-                    startSlideshow();
-                }
-            });
-
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    if (index === currentSlide || isTransitioning) return;
-                    clearInterval(slideInterval);
-                    showSlide(index);
-                    startSlideshow();
-                });
-            });
-
-            function startSlideshow() {
-                clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, 5000);
-            }
-
-            slideshow?.addEventListener('mouseenter', () => clearInterval(slideInterval));
-            slideshow?.addEventListener('mouseleave', startSlideshow);
-
-            slides[0].classList.add('active');
-            slides[0].setAttribute('aria-hidden', 'false');
-            indicators[0].setAttribute('aria-selected', 'true');
-            startSlideshow();
-        });
-    </script>
 </body>
-</html>
+</html>   
