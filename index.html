@@ -190,25 +190,23 @@
         }
 
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Три столбца */
-            grid-auto-rows: 1fr; /* Все строки одинаковой высоты */
-            gap: 1rem; /* Отступы между элементами */
+            display: flex;
+            flex-direction: column; /* Вертикальная колонка */
+            align-items: center; /* Центрирование прямоугольников по горизонтали */
+            gap: 1rem; /* Расстояние между прямоугольниками */
             padding: 1rem;
-       }
+     }
 
-      .services-grid div:nth-child(4),
-      .services-grid div:nth-child(5) {
-           grid-column: span 2; /* Эти два прямоугольника растянуты на два столбца */
+       .service-item {
+           width: 80%; /* Прямоугольники занимают 80% ширины экрана */
+           max-width: 700px; /* Максимальная ширина прямоугольника */
+           text-align: center; /* Текст по центру */
+           padding: 1.5rem;
+           background: rgba(30, 39, 97, 0.8);
+           border: 1px solid rgba(255, 255, 255, 0.2);
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
        }
-
-        .service-item {
-            background: rgba(30, 39, 97, 0.8);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: left;
-        }
 
         .service-item h3 {
             color: var(--gold-accent);
@@ -221,32 +219,32 @@
             margin: 0;
         }
 
-        .vehicle-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Три столбца */
-            grid-auto-rows: 1fr; /* Квадратные блоки */
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+       .vehicle-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr); /* Три квадрата в ряду */
+          gap: 1rem; /* Расстояние между квадратами */
+          max-width: 1200px; /* Максимальная ширина */
+          margin: 0 auto; /* Центрирование всей сетки */
+          padding: 2rem;
+    }
 
-        .vehicle-card > div {
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 1.5rem;
-            border-radius: 10px;
-            background: rgba(30, 39, 97, 0.8);
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+      .vehicle-card {
+          aspect-ratio: 1 / 1; /* Квадраты */
+          display: flex;
+          flex-direction: column; /* Содержимое в колонку */
+          justify-content: center;
+          align-items: center;
+          background: rgba(30, 39, 97, 0.8);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 10px;
+          padding: 1rem;
+     }
 
-        .vehicle-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            margin: 0 0 1rem 0;
-        }
+       .vehicle-card img {
+          width: 100%;
+          height: auto;
+          object-fit: cover; /* Изображение вписывается в квадрат */
+       }
         .vehicle-card.v-class img {
            object-fit: contain; /* Убедимся, что изображение не выходит за пределы */
            width: auto;        /* Увеличиваем ширину для растяжения */
