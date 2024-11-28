@@ -219,68 +219,43 @@
             margin: 0;
         }
 
-       .vehicle-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr); /* Три квадрата в ряду */
-          gap: 1rem; /* Расстояние между квадратами */
-          max-width: 1200px; /* Максимальная ширина */
-          margin: 0 auto; /* Центрирование всей сетки */
-          padding: 2rem;
-    }
+        .vehicle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Три квадрата в один ряд */
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+       }
 
-      .vehicle-card {
-          aspect-ratio: 1 / 1; /* Квадраты */
-          display: flex;
-          flex-direction: column; /* Содержимое в колонку */
-          justify-content: center;
-          align-items: center;
-          background: rgba(30, 39, 97, 0.8);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 10px;
-          padding: 1rem;
-     }
+        .vehicle-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(30, 39, 97, 0.8);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+       }
 
        .vehicle-card img {
-          width: 100%;
-          height: auto;
-          object-fit: cover; /* Изображение вписывается в квадрат */
-       }
-        .vehicle-card.v-class img {
-           object-fit: contain; /* Убедимся, что изображение не выходит за пределы */
-           width: auto;        /* Увеличиваем ширину для растяжения */
-           height: 250px;      /* Или задаем нужную высоту */
-        }
-        .car-info {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+            width: 100%;
+            max-width: 150px; /* Ограничение для фото */
+            height: auto;
+            margin-bottom: 1rem;
         }
 
-        .car-info h3 {
-            color: var(--gold-accent);
-            font-size: 1.5rem;
-            margin: 0 0 1rem 0;
-            text-align: center;
+      .car-info h3 {
+           margin-bottom: 1rem;
+           color: var(--gold-accent);
         }
 
-        .car-info div {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            margin-top: auto;
-        }
-
-        .car-info p {
-            margin: 0;
-            font-size: 1.1rem;
-        }
-
-        @media (max-width: 768px) {
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem 1rem;
+  @media (max-width: 768px) {
+    .vehicle-grid {
+        grid-template-columns: 1fr; /* Один квадрат в ряд */
+ 
     }
 
     .header-logo {
@@ -440,53 +415,51 @@
         </section>
 
         <section id="vehicle" class="section">
-            <div class="section-content">
-                <h2>Notre Véhicule</h2>
-                <div class="vehicle-grid">
-                    <div class="vehicle-card">
+          <div class="section-content">
+            <h2>Notre Véhicule</h2>
+               <div class="vehicle-grid">
+                 <div class="vehicle-card">
+                   <div>
+                      <img src="images/mercedes-e-class.png" alt="Mercedes E-class" loading="lazy" decoding="async">
+                         <div class="car-info">
+                           <h3>Mercedes E-class</h3>
                         <div>
-                            <img src="images/mercedes-e-class.png" alt="Mercedes E-class" loading="lazy" decoding="async">
-                            <div class="car-info">
-                                <h3>Mercedes E-class</h3>
-                                <div>
-                                    <p>👥 1 à 3 passagers</p>
-                                    <p>🧳 1 à 3 bagages</p>
-                                    <p>⭐ Business Class</p>
-                                </div>
-                            </div>
+                            <p>👥 1 à 3 passagers</p>
+                            <p>🧳 1 à 3 bagages</p>
+                            <p>⭐ Business Class</p>
                         </div>
                     </div>
-
-                    <div class="vehicle-card">
+                </div>
+            </div>
+            <div class="vehicle-card">
+                <div>
+                    <img src="images/mercedes-s-class.png" alt="Mercedes S-class" loading="lazy" decoding="async">
+                    <div class="car-info">
+                        <h3>Mercedes S-class</h3>
                         <div>
-                            <img src="images/mercedes-s-class.png" alt="Mercedes S-class" loading="lazy" decoding="async">
-                            <div class="car-info">
-                                <h3>Mercedes S-class</h3>
-                                <div>
-                                    <p>👥 1 à 2 passagers</p>
-                                    <p>🧳 1 à 2 bagages</p>
-                                    <p>⭐ Premium Class</p>
-                                </div>
-                            </div>
+                            <p>👥 1 à 2 passagers</p>
+                            <p>🧳 1 à 2 bagages</p>
+                            <p>⭐ Premium Class</p>
                         </div>
                     </div>
-
-                    <div class="vehicle-card v-class">
-                      <div>
-                       <img src="images/mercedes-v-class.png" alt="Mercedes V-class" loading="lazy" decoding="async">
-                        <div class="car-info">
-                         <h3>Mercedes V-class</h3>
-                          <div>
+                </div>
+            </div>
+            <div class="vehicle-card">
+                <div>
+                    <img src="images/mercedes-v-class.png" alt="Mercedes V-class" loading="lazy" decoding="async">
+                    <div class="car-info">
+                        <h3>Mercedes V-class</h3>
+                        <div>
                             <p>👥 1 à 7 passagers</p>
                             <p>🧳 1 à 7 bagages</p>
                             <p>⭐ Gamme Van</p>
-                          </div>
-                       </div>
-                     </div>
-                  </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <section id="contact" class="section">
             <div class="section-content">
