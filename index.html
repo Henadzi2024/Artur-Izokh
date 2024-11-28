@@ -246,7 +246,11 @@
             object-fit: contain;
             margin: 0 0 1rem 0;
         }
-
+        .vehicle-card.v-class img {
+           object-fit: contain; /* Убедимся, что изображение не выходит за пределы */
+           width: auto;        /* Увеличиваем ширину для растяжения */
+           height: 250px;      /* Или задаем нужную высоту */
+        }
         .car-info {
             flex: 1;
             display: flex;
@@ -468,19 +472,19 @@
                         </div>
                     </div>
 
-                    <div class="vehicle-card">
-                        <div>
-                            <img src="images/mercedes-v-class.png" alt="Mercedes V-class" loading="lazy" decoding="async">
-                            <div class="car-info">
-                                <h3>Mercedes V-class</h3>
-                                <div>
-                                    <p>👥 1 à 7 passagers</p>
-                                    <p>🧳 1 à 7 bagages</p>
-                                    <p>⭐ Gamme Van</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="vehicle-card v-class">
+                      <div>
+                       <img src="images/mercedes-v-class.png" alt="Mercedes V-class" loading="lazy" decoding="async">
+                        <div class="car-info">
+                         <h3>Mercedes V-class</h3>
+                          <div>
+                            <p>👥 1 à 7 passagers</p>
+                            <p>🧳 1 à 7 bagages</p>
+                            <p>⭐ Gamme Van</p>
+                          </div>
+                       </div>
+                     </div>
+                  </div>
                 </div>
             </div>
         </section>
