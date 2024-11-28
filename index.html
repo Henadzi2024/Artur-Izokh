@@ -223,8 +223,9 @@
 
         .vehicle-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr); /* Три столбца */
+            grid-auto-rows: 1fr; /* Квадратные блоки */
+            gap: 1rem;
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
