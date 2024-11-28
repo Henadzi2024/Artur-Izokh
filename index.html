@@ -183,50 +183,41 @@
         }
 
         .section h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            color: var(--gold-accent);
-        }
+           text-align: center;
+           margin-bottom: 2rem;
+           font-size: 2.5rem;
+           color: var(--gold-accent);
+       }
 
-        .services-grid {
-            display: flex;
-            flex-direction: column; /* Вертикальная колонка */
-            align-items: center; /* Центрирование прямоугольников по горизонтали */
-            gap: 1rem; /* Расстояние между прямоугольниками */
-            padding: 1rem;
+      .services-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+          padding: 1rem;
      }
 
-       .service-item {
-           width: 80%; /* Прямоугольники занимают 80% ширины экрана */
-           max-width: 700px; /* Максимальная ширина прямоугольника */
-           text-align: center; /* Текст по центру */
-           padding: 1.5rem;
-           background: rgba(30, 39, 97, 0.8);
-           border: 1px solid rgba(255, 255, 255, 0.2);
-           border-radius: 10px;
-           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-       }
+     .services-grid div:nth-last-child(-n+2) {
+          grid-column: span 3;
+          width: 50%;
+          margin: 0 auto;
+     }
 
-        .service-item h3 {
-            color: var(--gold-accent);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
+    .service-item {
+         background: rgba(30, 39, 97, 0.8);
+         border: 1px solid rgba(255,255,255,0.2);
+         border-radius: 10px;
+         padding: 1.5rem;
+         text-align: left;
+    }
 
-        .service-item p {
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        .vehicle-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Три квадрата в один ряд */
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-       }
+   .vehicle-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
 
         .vehicle-card {
             display: flex;
@@ -305,60 +296,60 @@
         margin: 0.5rem 1rem 0 1rem; /* Корректируем отступы */
         text-align: center;
     }
-}
 
+    .section {
+        padding: 3rem 1.5rem;
+        min-height: auto;
+    }
+
+    .services-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .service-item {
+        height: auto;
+        padding: 2rem;  /* больший padding как у нижних блоков */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        width: 100%;    /* на всю ширину */
+    }
+
+    .services-grid div:nth-last-child(-n+2) {
+        width: 100%;    /* все блоки одинаковой ширины */
+    }
+                
+   .vehicle-grid {
+       grid-template-columns: 1fr;
+       padding: 1rem;
             }
 
-            .section {
-                padding: 3rem 1.5rem;
-                min-height: auto;
-            }
+   .vehicle-card > div {
+       padding: 2rem;
+   }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+   .car-info h3 {
+      font-size: 1.8rem;
+  }
 
-            .services-grid div:nth-last-child(-n+2) {
-                width: 100%;
-                margin: 0;
-                grid-column: 1;
-            }
+   .car-info p {
+      font-size: 1.2rem;
+   }
 
-             .service-item {
-                height: auto; /* Возвращаем адаптивную высоту */
-                padding: 1.5rem; /* Устанавливаем комфортные внутренние отступы */
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                text-align: left;
-            }
+   .contacts div {
+      font-size: 1.3rem;
+      margin: 1rem 0;
+      padding: 0 1rem;
+      word-break: break-word;
+   }
 
-            .vehicle-grid {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
-
-            .vehicle-card > div {
-                padding: 2rem;
-            }
-
-            .car-info h3 {
-                font-size: 1.8rem;
-            }
-
-            .car-info p {
-                font-size: 1.2rem;
-            }
-
-            .contacts div {
-                font-size: 1.3rem;
-                margin: 1rem 0;
-                padding: 0 1rem;
-                word-break: break-word;
-            }
-
-            .contacts div:nth-child(2) {
-                font-size: 1.1rem; /* Уменьшаем размер specifically для email */
+  .contacts div:nth-child(2) {
+      font-size: 1.1rem; /* Уменьшаем размер specifically для email */
             }
         }
     </style>
