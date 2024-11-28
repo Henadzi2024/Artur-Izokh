@@ -189,18 +189,18 @@
             color: var(--gold-accent);
         }
 
-       .services-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr); /* Три столбца */
+            grid-auto-rows: 1fr; /* Все строки одинаковой высоты */
+            gap: 1rem; /* Отступы между элементами */
             padding: 1rem;
-        }
+       }
 
-        .services-grid div:nth-last-child(-n+2) {
-            grid-column: span 3;
-            width: 50%;
-            margin: 0 auto;
-        }
+      .services-grid div:nth-child(4),
+      .services-grid div:nth-child(5) {
+           grid-column: span 2; /* Эти два прямоугольника растянуты на два столбца */
+       }
 
         .service-item {
             background: rgba(30, 39, 97, 0.8);
