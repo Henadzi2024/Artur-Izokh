@@ -206,12 +206,13 @@
     }
 
    .vehicle-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 2rem;
+         display: flex; /* меняем с grid на flex */
+         flex-direction: row; /* явно указываем ряд */
+         gap: 1rem; /* уменьшаем отступы между карточками */
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 2rem;
+        justify-content: center; /* центрируем карточки в ряду */
     }
 
         .vehicle-card {
