@@ -206,13 +206,13 @@
     }
 
    .vehicle-grid {
-         display: flex; /* меняем с grid на flex */
-         flex-direction: row; /* явно указываем ряд */
-         gap: 1rem; /* уменьшаем отступы между карточками */
+         display: flex;
+         flex-direction: row;
+         gap: 1rem;
          max-width: 1200px;
          margin: 0 auto;
          padding: 2rem;
-        justify-content: center; /* центрируем карточки в ряду */
+        justify-content: center;
     }
 
         .vehicle-card {
@@ -243,7 +243,8 @@
 
   @media (max-width: 768px) {
     .vehicle-grid {
-        grid-template-columns: 1fr;
+         flex-direction: column;
+         padding: 1rem;
     }
 
     .header-logo {
