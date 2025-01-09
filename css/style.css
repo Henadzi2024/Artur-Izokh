@@ -113,21 +113,8 @@ button:focus {
         text-align: left;
         padding: 0;
     }
-	.slide1, .slide2, .slide4, .slide5 {}
-	.header-logo {
-        display: none;
-    }
-	.reservation-btn {
-        display: none !important;
-    }
-	.language-switcher {
-        margin: 5px 0 !important;
-    }
-	.navbar-toggle {
-		padding: 5px 10px !important;
-	}
 	.header {
-        padding: 5px 10px !important;
+        padding: 10px 10px 0 !important;
     }
 }
 @media (min-width: 768px) {    
