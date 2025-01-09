@@ -14,28 +14,20 @@
         :root {
             --text-light: #ffffff;
             --header-dark: #1e2761;
-            --gold-accent: #d4af37;
-        }
-
+            --gold-accent: #d4af37;        }
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
+            box-sizing: border-box;        }
         body {
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            overflow-x: hidden;
-        }
-
+            overflow-x: hidden;        }
         .language-switcher {
             display: flex;
             gap: 1rem;
             align-items: center;
-            margin-left: 2rem;
-        }
-
+            margin-left: 2rem;        }
         .language-btn {
             background: none;
             border: 1px solid var(--gold-accent);
@@ -46,17 +38,12 @@
             transition: all 0.3s ease;
             font-weight: 500;
             min-width: 40px;
-            text-align: center;
-        }
-
+            text-align: center;        }
         .language-btn.active {
-            background-color: var(--gold-accent);
-        }
-
+            background-color: var(--gold-accent);        }
         .language-btn:hover {
             background-color: var(--gold-accent);
-            transform: translateY(-2px);
-        }
+            transform: translateY(-2px);        }
 
         @keyframes sliding {
             0% { opacity: 1; }
@@ -65,8 +52,7 @@
             95% { opacity: 0; }
             100% { opacity: 1; }
         }
-
-        .slide1, .slide2, .slide4, .slide5 {
+        .slide1, .slide2, .slide3, .slide4, .slide5 {
             position: fixed;
             top: 0;
             left: 0;
@@ -78,33 +64,35 @@
             -webkit-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
         }
-
         .slide1 {
             z-index: -1;
             background-image: url('images/artur.jpg');
             background-position: center 25%;
             animation: sliding 25s infinite;
         }
-
         .slide2 {
             z-index: -2;
             background-image: url('images/artur-hotel.jpg');
             background-position: center 45%;
             animation: sliding 25s infinite 6s;
         }
-
-        .slide4 {
-            z-index: -4;
+        .slide3 {
+            z-index: -3;
             background-image: url('images/artur-vozle.jpg');
             background-position: center 25%;
             animation: sliding 25s infinite 12s;
         }
-
-        .slide5 {
-            z-index: -5;
+        .slide4 {
+            z-index: -4;
             background-image: url('images/artur-zarulem.jpg');
             background-position: center 37%;
             animation: sliding 25s infinite 18s;
+        }
+        .slide5 {
+            z-index: -5;
+            background-image: url('images/artur.jpg');
+            background-position: center 25%;
+            animation: sliding 25s infinite 24s;
         }
 
         .header {
@@ -118,27 +106,19 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);}
         .header-logo {
             height: 50px;
-            width: auto;
-        }
-
+            width: auto;}
         .header-right {
             display: flex;
             align-items: center;
-            gap: 2rem;
-        }
-
+            gap: 2rem;}
         .nav-list {
             display: flex;
             list-style: none;
             gap: 2rem;
-            flex-wrap: wrap;
-        }
-
+            flex-wrap: wrap;}
         .nav-link {
             color: var(--text-light);
             text-decoration: none;
@@ -146,13 +126,9 @@
             padding: 0.5rem 0;
             display: block;
             transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
+            font-weight: 500;}
         .nav-link:hover {
-            color: var(--gold-accent);
-        }
-
+            color: var(--gold-accent);}
         .reservation-btn {
             display: inline-block;
             background-color: var(--gold-accent);
@@ -166,15 +142,11 @@
             transition: all 0.3s ease;
             white-space: nowrap;
             font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
+            letter-spacing: 0.5px;}
         .reservation-btn:hover {
             background-color: #b69530;
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);}
         .main-content {
             text-align: center;
             padding: 2rem 1rem;
@@ -182,10 +154,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-top: 60px;
-        }
-
-		
+            margin-top: 60px;}		
 		.car-info a.wsbtn, .service-item a.wsbtn{
 			color: #fff;
 			display: block;
@@ -194,20 +163,14 @@
 			border-radius: 5px;
 			padding: 10px 0px;
 			background-color: #d4af37;
-			text-align: center;
-		}
-
+			text-align: center;}
         .contacts, .contacts a {
             text-align: center;
             padding: 1rem;
-            color: var(--text-light);
-        }
-
+            color: var(--text-light);}
         .contacts div {
             font-size: 1.5em;
-            margin: 1rem 0;
-        }
-
+            margin: 1rem 0;}
         .title {
             color: #ffcc00;
             font-size: 3.5rem;
@@ -217,9 +180,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
             font-weight: 700;
-            letter-spacing: 1px;
-        }
-
+            letter-spacing: 1px;}
         .subtitle {
             color: #fff700;
             font-size: 1.5rem;
@@ -227,69 +188,51 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             word-wrap: break-word;
             font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
+            margin-bottom: 2rem;}
         .section {
             min-height: 100vh;
             padding: 4rem 2rem;
             background: rgba(0, 0, 0, 0.7);
             position: relative;
-            backdrop-filter: blur(5px);
-        }
-
+            backdrop-filter: blur(5px);}
         .section-content {
             max-width: 1200px;
             margin: 0 auto;
-            color: var(--text-light);
-        }
-
+            color: var(--text-light);}
         .section h2 {
             text-align: center;
             margin-bottom: 2rem;
             font-size: 2.5rem;
             color: var(--gold-accent);
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
+            letter-spacing: 1px;}
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             padding: 1rem;
-            justify-content: center;
-        }
-
+            justify-content: center;}
         .service-item {
             background: rgba(30, 39, 97, 0.8);
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 10px;
             padding: 1.5rem;
             text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
+            transition: transform 0.3s ease, box-shadow 0.3s ease;}
         .service-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);}
         .service-item h3 {
             color: var(--gold-accent);
             margin-bottom: 1rem;
             font-size: 1.2rem;
-            letter-spacing: 0.5px;
-        }
-
+            letter-spacing: 0.5px;}
         .vehicle-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             justify-content: center;
-            padding: 2rem;
-        }
-
+            padding: 2rem;}
         .vehicle-card {
             background: rgba(30, 39, 97, 0.8);
             border: 1px solid rgba(255,255,255,0.2);
@@ -299,118 +242,94 @@
             flex: 1;
             min-width: 280px;
             max-width: 350px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
+            transition: transform 0.3s ease, box-shadow 0.3s ease;}
         .vehicle-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);}
         .vehicle-card img {
             width: 100%;
             max-width: 200px;
             height: auto;
             margin-bottom: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
+            transition: transform 0.3s ease;}
         .vehicle-card:hover img {
-            transform: scale(1.05);
-        }
-
+            transform: scale(1.05);}
         .car-info h3 {
             color: var(--gold-accent);
             margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-
+            font-size: 1.8rem;}
         .car-info p {
             margin: 0.5rem 0;
-            font-size: 1.1rem;
-        }
+            font-size: 1.1rem;}		
+		.header {
+			display:flex;}
+		.header.header-mob {
+			display:none;}
 
         @media (max-width: 768px) {
             .header {
                 padding: 1rem;
                 flex-direction: column;
 				position: relative;
-            }
-
+				display:none;}
+            .header.header-mob {
+				display:flex;}
             .language-switcher {
-                margin: 1rem 0;
+                margin: 10px 0 !important;
                 justify-content: center;
-                order: 2;
-            }
-
+                }
             .header-logo {
-                height: 40px;
-                margin-bottom: 1rem;
-            }
-
-            .header-right {
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-                order: 3;
-            }
-
+                height: 40px;}
+			.navbar-toggle {
+				padding: 5px 10px !important;
+				margin-top: -53px;
+				width:73px;
+			}
+			.header-right {
+				display: inline-block;
+				width: 100%;
+			}
             .nav-list {
                 justify-content: center;
                 gap: 1rem;
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .reservation-btn {
-                order: 1;
-                width: 100%;
-                text-align: center;
-            }
-
+                align-items: center;}
+			.bs_navigation_menu ul li a {
+				padding: 15px 15px;}
+            .reservation-btn {                
+                text-align: center;}
             .title {
                 font-size: 2rem;
                 padding: 0 1rem;				
-				margin: 2rem 0 2rem;
-            }
-
+				margin: 2rem 0 2rem;}
             .subtitle {
                 font-size: 1.2rem;
-                padding: 0 1rem;
-            }
-
+                padding: 0 1rem;}
             .services-grid {
-                grid-template-columns: 1fr;
-            }
-
+                grid-template-columns: 1fr;}
             .vehicle-grid {
                 flex-direction: column;
-                align-items: center;
-            }
-
+                align-items: center;}
             .vehicle-card {
-                width: 100%;
-            }
-
+                width: 100%;}
             .section {
-                padding: 3rem 1rem;
-            }
-
+                padding: 3rem 1rem;}
             .section h2 {
-                font-size: 2rem;
-            }
-
+                font-size: 2rem;}
             .main-content {
-                margin-top: 200px;
-            }
+                margin-top: 200px;}
+			.wrap-logo-btn{display: flex;
+                gap: 1rem;}
         }
     </style>
 </head>
 <body>
-    <div class="slide1"></div>
-    <div class="slide2"></div>
-    <div class="slide4"></div>
-    <div class="slide5"></div>
+
+	<div class="slide1"></div>
+	<div class="slide2"></div>
+	<div class="slide3"></div>
+	<div class="slide4"></div>
+	<div class="slide5"></div>
 
     <header class="header">
         <img src="images/logotip.png" alt="VTC Service" class="header-logo">
@@ -421,10 +340,31 @@
         </div>
         <a href="tel:+33628619912" class="reservation-btn" data-translate="book_now">Réserver maintenant</a>
         <div class="header-right">
-			<div class="navbar-toggle" data-target="#menu" data-toggle="collapse">
+			<nav>
+				<ul class="nav-list">
+					<li><a href="#services" class="nav-link" data-translate="nav_services">Nos services</a></li>
+					<li><a href="#vehicle" class="nav-link" data-translate="nav_vehicle">Notre véhicule</a></li>
+					<li><a href="#contact" class="nav-link" data-translate="nav_contact">Contactez-nous</a></li>
+				</ul>
+			</nav>
+        </div>
+    </header>
+	
+    <header class="header header-mob">
+		<div class="wrap-logo-btn">
+			<img src="images/logotip.png" alt="VTC Service" class="header-logo">
+			<a href="tel:+33628619912" class="reservation-btn" data-translate="book_now">Réserver maintenant</a>
+		</div>
+        <div class="header-right">
+			<span class="language-switcher">
+				<button class="language-btn active" data-lang="fr">FR</button>
+				<button class="language-btn" data-lang="ru">RU</button>
+				<button class="language-btn" data-lang="en">EN</button>
+			</span>
+			<span class="navbar-toggle" data-target="#menu" data-toggle="collapse">
 				<span>Menu</span>
-				<i class="fa fa-bars"></i>
-			</div>
+				<!--i class="fa fa-bars"></i-->
+			</span>
 			<div class="bs_navigation_menu collapse navbar-collapse bs_scroll_menu" id="menu">
 				<nav>
 					<ul class="nav-list">
@@ -438,7 +378,7 @@
     </header>
 
     <h2 class="title" data-translate="main_title">Votre chauffeur privé</h2>
-    <p class="subtitle" data-translate="main_subtitle">Il est temps de réserver votre transfert vers les Alpes (Courchevel, Val Thorens, Chamonix...)</p>
+    <p class="subtitle" data-translate="main_subtitle">Il est temps de réserver votre transfert vers les Alpes</p>
 
     <main>
         <div class="main-content"></div>
@@ -565,7 +505,7 @@
                 nav_vehicle: "Notre véhicule",
                 nav_contact: "Contactez-nous",
                 main_title: "Votre chauffeur privé",
-                main_subtitle: "Il est temps de réserver votre transfert vers les Alpes (Courchevel, Val Thorens, Chamonix...)",
+                main_subtitle: "Il est temps de réserver votre transfert vers les Alpes",
                 services_title: "Nos Services",
                 vehicle_title: "Notre Véhicule",
                 contact_title: "Contactez-nous",
@@ -597,7 +537,7 @@
                 nav_vehicle: "Автопарк",
                 nav_contact: "Контакты",
                 main_title: "Ваш личный водитель",
-                main_subtitle: "Пора забронировать ваш трансфер в Альпы (Куршевель, Валь Торанс, Шамони...)",
+                main_subtitle: "Пора забронировать ваш трансфер в Альпы",
                 services_title: "Наши услуги",
                 vehicle_title: "Наш автопарк",
                 contact_title: "Свяжитесь с нами",
@@ -626,35 +566,35 @@
             },
             en: {
                 nav_services: "Services",
-                nav_vehicle: "Vehicles",
+                nav_vehicle: "Fleet",
                 nav_contact: "Contact",
-                main_title: "Your Private Driver",
-                main_subtitle: "It's time to book your transfer to the Alps (Courchevel, Val Thorens, Chamonix...)",
+                main_title: "Your Personal Driver",
+                main_subtitle: "It's time to book your transfer to the Alps",
                 services_title: "Our Services",
-                vehicle_title: "Our Vehicles",
+                vehicle_title: "Our Fleet",
                 contact_title: "Contact Us",
-                service_1_title: "🚗 PRIVATE DRIVER AT YOUR DISPOSAL",
-                service_1_desc: "ARTIZ SERVICE provides a dedicated driver for your appointments, shopping, or tourist visits in Paris. Flexibility and comfort guaranteed.",
+                service_1_title: "🚗 PERSONAL DRIVER AT YOUR SERVICE",
+                service_1_desc: "ARTIZ SERVICE provides a personal driver for your meetings, shopping, or tourist trips in Paris. We guarantee flexibility and comfort.",
                 service_2_title: "🌟 WEDDING DRIVER",
-                service_2_desc: "On your special day, trust ARTIZ SERVICE. Rental, fuel, coordination: we handle everything for your peace of mind.",
-                service_3_title: "🎨 ONE-TIME RIDES",
-                service_3_desc: "ARTIZ SERVICE ensures your transportation in Paris and Île-de-France. Premium service for all your journeys.",
-                service_4_title: "🚗 LONG-DISTANCE TRANSFERS",
-                service_4_desc: "ARTIZ SERVICE offers VIP sedans and vans for Europe and major French cities (Deauville, Nice, Marseille, Bordeaux, Île de Ré, Mont Saint-Michel) etc.",
+                service_2_desc: "On your special day, trust ARTIZ SERVICE. Rental, fuel, coordination: we take care of everything for your peace of mind.",
+                service_3_title: "🎨 ONE-TIME TRIPS",
+                service_3_desc: "ARTIZ SERVICE ensures your trips around Paris and the Île-de-France region. Premium service for any route.",
+                service_4_title: "🚗 LONG-DISTANCE TRIPS",
+                service_4_desc: "ARTIZ SERVICE offers VIP sedans and minibuses for trips across Europe and major French cities (Deauville, Nice, Marseille, Bordeaux, Île de Ré, Mont Saint-Michel), and more.",
                 service_5_title: "🌟 TOURIST TRANSFERS",
-                service_5_desc: "Transfers to Disneyland Paris, Parc Astérix, Fontainebleau and Versailles castles. ARTIZ SERVICE, excellence at your service.",
+                service_5_desc: "Transfers to Disneyland Paris, Parc Astérix, the castles of Fontainebleau and Versailles. ARTIZ SERVICE - exceptional service at your disposal.",
 				service_5_btn: "Book Now",
                 book_now: "Book Now",
 				car_info_eclass: "👥 1-3 passengers",
                 car_info_eclass_bagages: "🧳 1-3 luggage",
-                car_info_eclass_gamme_business: "⭐ Range Business",
+                car_info_eclass_gamme_business: "⭐ Business Class",
 				car_info_sclass: "👥 1-2 passengers",
                 car_info_sclass_bagages: "🧳 1-2 luggage",
-                car_info_sclass_gamme_premium: "⭐ Range Premium",
+                car_info_sclass_gamme_premium: "⭐ Premium Class",
 				car_info_vclass: "👥 1-7 passengers",
                 car_info_vclass_bagages: "🧳 1-7 luggage",
-                car_info_vclass_gamme_van: "⭐ Range Van",
-                car_info_gamme_eco: "⭐ Range Eco"
+                car_info_vclass_gamme_van: "⭐ Van",
+                car_info_gamme_eco: "⭐ Eco Class"
             }
         };
 
